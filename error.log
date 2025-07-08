@@ -1,0 +1,378 @@
+10406 2025-07-08 13:51:49,672 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10437 2025-07-08 13:51:49,703 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10439 2025-07-08 13:51:49,705 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10440 2025-07-08 13:51:49,706 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10441 2025-07-08 13:51:49,707 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10443 2025-07-08 13:51:49,709 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10444 2025-07-08 13:51:49,710 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10445 2025-07-08 13:51:49,711 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10447 2025-07-08 13:51:49,713 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10449 2025-07-08 13:51:49,715 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10450 2025-07-08 13:51:49,716 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10451 2025-07-08 13:51:49,717 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10452 2025-07-08 13:51:49,718 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10453 2025-07-08 13:51:49,719 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10455 2025-07-08 13:51:49,721 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10457 2025-07-08 13:51:49,723 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10459 2025-07-08 13:51:49,725 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10460 2025-07-08 13:51:49,726 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10461 2025-07-08 13:51:49,727 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10463 2025-07-08 13:51:49,729 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+10464 2025-07-08 13:51:49,730 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:21) [classes/:?]
+1194 2025-07-08 13:54:31,081 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1202 2025-07-08 13:54:31,089 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1203 2025-07-08 13:54:31,090 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1203 2025-07-08 13:54:31,090 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1203 2025-07-08 13:54:31,090 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1204 2025-07-08 13:54:31,091 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1205 2025-07-08 13:54:31,092 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1205 2025-07-08 13:54:31,092 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1205 2025-07-08 13:54:31,092 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1205 2025-07-08 13:54:31,092 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1206 2025-07-08 13:54:31,093 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1207 2025-07-08 13:54:31,094 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1207 2025-07-08 13:54:31,094 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1207 2025-07-08 13:54:31,094 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1208 2025-07-08 13:54:31,095 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1208 2025-07-08 13:54:31,095 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1208 2025-07-08 13:54:31,095 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1209 2025-07-08 13:54:31,096 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1209 2025-07-08 13:54:31,096 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1209 2025-07-08 13:54:31,096 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]
+1209 2025-07-08 13:54:31,096 [main] ERROR errorLogger [] - sql_fetch_rows error
+java.lang.NoSuchFieldException: 
+trigger
+	at java.lang.Class.getDeclaredField(Class.java:2070) ~[?:1.8.0_391]
+	at jedi.game.mysql.MysqlDatabase.sql_fetch_rows(MysqlDatabase.java:91) [classes/:?]
+	at jedi.game.db.BasicCacheDatabaseDao.getListCustom(BasicCacheDatabaseDao.java:122) [classes/:?]
+	at jedi.game.cache.CacheDatas.getListCustomFromDao(CacheDatas.java:186) [classes/:?]
+	at jedi.game.servercfg.dao.CfgSkillDao.getSkills(CfgSkillDao.java:46) [classes/:?]
+	at jedi.game.Main.main(Main.java:23) [classes/:?]

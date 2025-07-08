@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configuration>
+<Configuration status="WARN">
+	<Appenders>
+		<!-- console -->
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout charset="UTF-8"
+				pattern="[%t]%d{yyyy-MM-dd HH:mm:ss.SSS}, %m%n" />
+		</Console>
+
+		<!-- file appender, for common info -->
+		<RollingRandomAccessFile name="infoAppender"
+								 fileName="cron/info.log"
+								 filePattern="cron/info-%d{yyyy-MM-dd}.log"
+								 immediateFlush="true"
+								 append="true">
+			<PatternLayout charset="UTF-8"
+						   pattern="%-4r %d [%t] %-5p %c{1} %x - %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+			</Policies>
+			<DefaultRolloverStrategy max="7" />
+		</RollingRandomAccessFile>
+
+		<!-- file appender, for cron info -->
+		<RollingRandomAccessFile name="cronAppender"
+								 fileName="cron/cron.log"
+								 filePattern="cron/cron-%d{yyyy-MM-dd}.log"
+								 immediateFlush="true"
+								 append="true">
+			<PatternLayout charset="UTF-8"
+						   pattern="[%d{yyyy-MM-dd HH:mm:ss(SSSS)}] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+			</Policies>
+			<DefaultRolloverStrategy max="7" />
+		</RollingRandomAccessFile>
+
+
+		<!-- file appender, for error -->
+		<RollingRandomAccessFile name="errorAppender"
+			fileName="error.log" filePattern="error.log.%i" immediateFlush="true"
+			append="true">
+			<PatternLayout charset="UTF-8"
+				pattern="%-4r %d [%t] %-5p %c{1} %x - %m%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="100MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="1" />
+		</RollingRandomAccessFile>
+
+		<!-- file appender, for FIX -->
+		<RollingRandomAccessFile name="fixAppender"
+			fileName="fix.log" filePattern="fix.log.%i" immediateFlush="true"
+			append="true">
+			<PatternLayout charset="UTF-8"
+				pattern="%-d{yyyy-MM-dd HH:mm:ss SSS}  [ %t ] - [ %p ]  %m%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="500MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="1" />
+		</RollingRandomAccessFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="debugLogger" level="${sys:debugLoggerLevel}"
+			additivity="false">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="infoLogger" level="INFO" additivity="false">
+			<AppenderRef ref="infoAppender" />
+		</Logger>
+		<Logger name="cronLogger" level="INFO" additivity="false">
+			<AppenderRef ref="cronAppender" />
+		</Logger>
+		<Logger name="errorLogger" level="ERROR" additivity="false">
+			<AppenderRef ref="errorAppender" />
+		</Logger>
+		<Logger name="fixLogger" level="INFO" additivity="false">
+			<AppenderRef ref="fixAppender" />
+		</Logger>
+		<Logger
+			name="org.apache.mina.filter.executor.OrderedThreadPoolExecutor"
+			level="ERROR" additivity="false">
+			<AppenderRef ref="errorAppender" />
+		</Logger>
+		<Logger name="log4j.logger.org.apache.mina" level="ERROR"
+			additivity="false">
+			<AppenderRef ref="errorAppender" />
+		</Logger>
+		<Logger
+			name="org.apache.http.client.protocol.RequestAddCookies"
+			level="ERROR" additivity="false">
+			<AppenderRef ref="errorAppender" />
+		</Logger>
+		<Root level="ERROR">
+			<AppenderRef ref="console" />
+		</Root>
+	</Loggers>
+</Configuration>
