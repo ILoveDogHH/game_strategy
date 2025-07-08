@@ -15,15 +15,16 @@ import java.util.Set;
 public abstract class AbstractSkill implements ISkill {
 
     protected final int skillid;
+    protected final int skill_star;
     protected final EffectType effectType;
-    protected final TargetType effectTargetType;
-    protected final Set<SkillTriggerType> skillTriggerTypes;
+    public int trigger;  // 触发条件
+    public int target;   // 目标
 
-    public AbstractSkill(int skillid, EffectType effectType, TargetType effectTargetType, Set<SkillTriggerType> skillTriggerTypes) {
+
+    public AbstractSkill(int skillid, int skillStar, int effectValue) {
         this.skillid = skillid;
-        this.effectType = effectType;
-        this.effectTargetType = effectTargetType;
-        this.skillTriggerTypes = skillTriggerTypes;
+        skill_star = skillStar;
+        this.effectType = EffectType.getEffectType(effectValue);
     }
 
 
@@ -33,7 +34,7 @@ public abstract class AbstractSkill implements ISkill {
 
 
     public ActionEffect getActionEffect(IEntity entity){
-        return new ActionEffect(skillid, effectType, effectTargetType, entity.getUid(), entity.getPosition());
+        return new ActionEffect(skillid, effectType, getEffectTargetType(), entity.getUid(), entity.getPosition());
     }
 
 
@@ -58,10 +59,7 @@ public abstract class AbstractSkill implements ISkill {
 
 
 
-    @Override
-    public Set<SkillTriggerType> getTriggerTypes() {
-        return skillTriggerTypes;
-    }
+
 
 
 
@@ -83,7 +81,11 @@ public abstract class AbstractSkill implements ISkill {
 
     @Override
     public TargetType getEffectTargetType() {
-        return effectTargetType;
+        return TargetType.fromValue(target);
+    }
+    @Override
+    public SkillTriggerType getTriggerTypes() {
+        return SkillTriggerType.fromValue(trigger);
     }
 
 

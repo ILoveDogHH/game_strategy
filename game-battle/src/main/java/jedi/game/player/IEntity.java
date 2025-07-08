@@ -26,6 +26,7 @@ public interface IEntity {
     int getMaxHp();
     int getProjectileTs();
     void setProjectileTs(int projectileTs);
+    void addShield(int shield);
 
     default TargetType getTargeType() { return TargetType.PRIORITY_FRONT; }
 

@@ -1,11 +1,15 @@
 package jedi.game.fatcory;
 
 import jedi.game.servercfg.enity.CfgSkill;
+import jedi.game.skill.DynamicShield;
 import jedi.game.skill.base.ISkill;
 
 public enum SkillTypeEnum {
 
-    NONE(1, "desc", null);
+    NONE(0, "", null),
+
+    DYNAMIC_SHIELD(1, "LangKey({1}{2}时，对{3}添加{4}层护盾)_LangArgs(前军;暴击;自身;4)",DynamicShield::new);
+
 
 
     int type;
@@ -16,7 +20,7 @@ public enum SkillTypeEnum {
 
 
     private interface TypeFactory {
-        ISkill newType(int id, String param);
+        ISkill newType(CfgSkill cfgSkill);
     }
 
 
@@ -41,7 +45,7 @@ public enum SkillTypeEnum {
             return null;
         }
         SkillTypeEnum skillTypeEnum = SkillTypeEnum.getType(cfgSkill.getSkil_type());
-        ISkill skill = skillTypeEnum.newType(cfgSkill.getSkill_id(), cfgSkill.getParam());
+        ISkill skill = skillTypeEnum.newType(cfgSkill);
         return skill;
     }
 
@@ -50,15 +54,9 @@ public enum SkillTypeEnum {
     }
 
 
-    /**
-     * 创建一个新的task
-     *
-     * @param id
-     * @param params
-     * @return
-     */
-    private ISkill newType(int id,  String params) {
-        return factory.newType(id, params);
+
+    private ISkill newType(CfgSkill cfgSkill) {
+        return factory.newType(cfgSkill);
     }
 
 

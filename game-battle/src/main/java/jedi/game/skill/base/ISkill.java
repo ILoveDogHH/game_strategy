@@ -20,7 +20,7 @@ public interface ISkill {
     TargetType getEffectTargetType();
 
 
-    Set<SkillTriggerType> getTriggerTypes();  // 声明自己要监听哪些事件
+    SkillTriggerType getTriggerTypes();  // 声明自己要监听哪些事件
 
     List<ActionEffect> apply(BattleContext ctx, IEntity source, Player target);
 
