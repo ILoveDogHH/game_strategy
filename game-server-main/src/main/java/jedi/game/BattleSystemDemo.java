@@ -2,6 +2,7 @@ package jedi.game;
 
 import jedi.game.battle.BattleTeam;
 import jedi.game.enums.PositionType;
+import jedi.game.exception.DaoException;
 import jedi.game.fatcory.SkillFatcory;
 import jedi.game.player.Hero;
 import jedi.game.player.Player;
@@ -20,7 +21,7 @@ public class BattleSystemDemo {
 
 
 
-    public static List<String> runBattle( {
+    public static List<String> runBattle()throws DaoException {
         Player p1 = new Player("玩家A",
                 new Soldier(PositionType.FRONT, "A前军", 100, 10, 0.5, 1.5, 0.1, 1, null, 1000),
                 new Soldier(PositionType.BACK, "A后军", 100, 10, 0.25, 1.5, 0.1, 1, null,1000),
@@ -44,8 +45,9 @@ public class BattleSystemDemo {
         p2.general.setOwner(p2);
 
 
-        CfgSkill cfgSkill = CfgSkillDao.getSkill(10)
-        ISkill iSkill = SkillFatcory.createSkill()
+        CfgSkill cfgSkill = CfgSkillDao.getSkill(10);
+        ISkill iSkill = SkillFatcory.createSkill(cfgSkill);
+
 
 
 
