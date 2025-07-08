@@ -9,16 +9,16 @@ import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public abstract class AbstractSkill implements ISkill {
 
     protected final int skillid;
     protected final int skill_star;
     protected final EffectType effectType;
-    public int trigger;  // 触发条件
-    public int target;   // 目标
 
 
     public AbstractSkill(int skillid, int skillStar, int effectValue) {
@@ -34,7 +34,7 @@ public abstract class AbstractSkill implements ISkill {
 
 
     public ActionEffect getActionEffect(IEntity entity){
-        return new ActionEffect(skillid, effectType, getEffectTargetType(), entity.getUid(), entity.getPosition());
+        return new ActionEffect(skillid, effectType, getTargetType(), entity.getUid(), entity.getPosition());
     }
 
 
@@ -42,7 +42,10 @@ public abstract class AbstractSkill implements ISkill {
 
     @Override
     public List<ActionEffect> apply(BattleContext ctx, IEntity source, Player target) {
-        List<IEntity> entity = getEffectIentity(source, target, getEffectTargetType());
+        if(!getCaster().contains(source.getPosition())){
+            return new ArrayList<>();
+        }
+        List<IEntity> entity = getEffectIentity(source, target, getTargetType());
         List<ActionEffect> actionEffects = new ArrayList<>();
         for(IEntity e : entity){
             ActionEffect actionEffect = execute(ctx, source, e);
@@ -55,11 +58,6 @@ public abstract class AbstractSkill implements ISkill {
 
 
     public abstract ActionEffect execute(BattleContext ctx, IEntity source, IEntity target);
-
-
-
-
-
 
 
 
@@ -79,14 +77,7 @@ public abstract class AbstractSkill implements ISkill {
         return effectType;
     }
 
-    @Override
-    public TargetType getEffectTargetType() {
-        return TargetType.fromValue(target);
-    }
-    @Override
-    public SkillTriggerType getTriggerTypes() {
-        return SkillTriggerType.fromValue(trigger);
-    }
+
 
 
 

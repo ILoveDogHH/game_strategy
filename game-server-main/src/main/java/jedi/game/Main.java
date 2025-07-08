@@ -20,9 +20,9 @@ public class Main {
         DBManager.instance.initialize();
 
 
-        List<CfgSkill> cfgSkillList = CfgSkillDao.getSkills();
 
-        System.out.println(cfgSkillList);
+        BattleSystemDemo.runBattle();
+
 
     }
 

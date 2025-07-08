@@ -17,12 +17,15 @@ public interface ISkill {
 
     EffectType getEffectType();
 
-    TargetType getEffectTargetType();
+    TargetType  getTargetType();
 
+    Set<Integer> getCaster();
 
     SkillTriggerType getTriggerTypes();  // 声明自己要监听哪些事件
 
     List<ActionEffect> apply(BattleContext ctx, IEntity source, Player target);
+
+
 
 
     default long getInterval(){return -1;};

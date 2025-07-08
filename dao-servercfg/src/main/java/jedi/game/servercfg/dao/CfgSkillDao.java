@@ -9,6 +9,7 @@ import jedi.game.db.TableType;
 import jedi.game.exception.DaoException;
 import jedi.game.servercfg.base.ServerCfgCacheDaoInterface;
 import jedi.game.servercfg.enity.CfgSkill;
+import org.apache.ibatis.mapping.CacheBuilder;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -44,6 +45,11 @@ public class CfgSkillDao implements ServerCfgCacheDaoInterface {
     public static List<CfgSkill> getSkills() throws DaoException {
         String sql = "select * from cfg_skill";
         return cacheDatas.getListCustomFromDao(CacheUtils.toKey(), sql).stream().collect(Collectors.toList());
+    }
+
+
+    public static CfgSkill getSkill(int skillid) throws DaoException {
+        return cacheDatas.getOneFromDao(CacheUtils.toKey(skillid));
     }
 
 

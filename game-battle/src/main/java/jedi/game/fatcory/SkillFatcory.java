@@ -4,7 +4,7 @@ import jedi.game.servercfg.enity.CfgSkill;
 import jedi.game.skill.DynamicShield;
 import jedi.game.skill.base.ISkill;
 
-public enum SkillTypeEnum {
+public enum SkillFatcory {
 
     NONE(0, "", null),
 
@@ -24,14 +24,14 @@ public enum SkillTypeEnum {
     }
 
 
-    SkillTypeEnum(int type, String desc, TypeFactory factory){
+    SkillFatcory(int type, String desc, TypeFactory factory){
         this.type = type;
         this.desc = desc;
         this.factory = factory;
     }
 
-    public static SkillTypeEnum getType(int type){
-        for(SkillTypeEnum skillTypeEnum : values()){
+    public static SkillFatcory getType(int type){
+        for(SkillFatcory skillTypeEnum : values()){
             if(skillTypeEnum.type == type){
                 return skillTypeEnum;
             }
@@ -44,7 +44,7 @@ public enum SkillTypeEnum {
         if (cfgSkill == null) {
             return null;
         }
-        SkillTypeEnum skillTypeEnum = SkillTypeEnum.getType(cfgSkill.getSkil_type());
+        SkillFatcory skillTypeEnum = SkillFatcory.getType(cfgSkill.getSkil_type());
         ISkill skill = skillTypeEnum.newType(cfgSkill);
         return skill;
     }

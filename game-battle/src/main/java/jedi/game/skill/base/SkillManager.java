@@ -19,7 +19,7 @@ public class SkillManager {
     public List<ActionEffect> trigger(SkillTriggerType triggerType, BattleContext ctx, IEntity source, Player target) {
         List<ActionEffect> result = new ArrayList<>();
         for (ISkill buff : skills) {
-            if (buff.getTriggerTypes().contains(triggerType)) {
+            if (buff.getTriggerTypes() == triggerType) {
                 List<ActionEffect> ab = buff.apply(ctx, source, target);
                 for(ActionEffect ae : ab){
                     if (ae != null && ae.getValue() > 0) {
