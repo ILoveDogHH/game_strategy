@@ -6,17 +6,21 @@ import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 import jedi.game.servercfg.enity.CfgSkill;
 import jedi.game.skill.base.AbstractSkill;
-// LangKey({1}{2}后，每{3}秒对{4}添加{5}层冰冻)_LangArgs(我方前军;战斗开始;1;敌方全体;6)
-public class FreezeStackDynamicTick extends AbstractSkill {
+
+public class BurnRestoreLossBasedTick extends AbstractSkill {
 
 
-    //冰冻层数
-    public int freezeStack;
+    public double percent;
+
+    public int minStack;
 
 
-    public FreezeStackDynamicTick(CfgSkill cfgSkill) {
+    public BurnRestoreLossBasedTick(CfgSkill cfgSkill) {
         super(cfgSkill);
     }
+
+
+
 
     @Override
     public void deduceParams(String params) {
@@ -25,7 +29,8 @@ public class FreezeStackDynamicTick extends AbstractSkill {
         this.trigger = Integer.parseInt(param[1]);
         this.tick = Long.parseLong(param[2]);
         this.target = Integer.parseInt(param[3]);
-        this.freezeStack = Integer.parseInt(param[4]);
+        this.percent = Double.parseDouble(param[4]);
+        this.minStack = Integer.parseInt(param[5]);
     }
 
     @Override
@@ -35,9 +40,14 @@ public class FreezeStackDynamicTick extends AbstractSkill {
 
     @Override
     public ActionEffect executeTick(BattleContext ctx, IEntity source, IEntity target, Player defender) {
-        target.addFreeze(freezeStack);
+
+        int lostHp = target.getLostHp(); // 计算损失的生命值
+
+        int addStack = (int) Math.max(lostHp * percent, minStack);
+
+        target.addBurn(addStack);
         ActionEffect actionEffect = getActionEffect(target);
-        actionEffect.setValue(freezeStack);
+        actionEffect.setValue(addStack);
         return actionEffect;
     }
 }

@@ -29,6 +29,7 @@ public interface IEntity {
     void addShield(int shield);
     void setStunTs(long stunTs);
     void addVulnerable(long vulnerable);
+    void addBurn(int burn);
 
     int getLostHp();
 
