@@ -28,14 +28,15 @@ public interface ISkill {
     List<ActionEffect> tick(BattleContext ctx, IEntity source, Player target);
 
 
-    /**
-     * 过期时间
-     * @return
-     */
-    default long getInterval(){return -1;};
+    void setExpireTime(long expireTime);
+
+    long getExpireTime();
+
+    boolean isExpired(long currentTime);
 
     /** * 每次触发的间隔时间
      * @return
      */
-    default double getTick(){return -1;};
+    default long getTick(){return -1;};
+
 }

@@ -140,5 +140,8 @@ public class Soldier extends AbstractEntity {
         this.shield = Math.max(0, this.shield + shield); // 确保盾牌值不会为负
     }
 
-
+    @Override
+    public int getLostHp() {
+        return Math.max(0, maxHp - currentHp); // 计算损失的生命值
+    }
 }

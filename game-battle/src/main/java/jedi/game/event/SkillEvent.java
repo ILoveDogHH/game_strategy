@@ -29,18 +29,24 @@ public class SkillEvent extends AbstractEvent implements IUnitLinkedEvent {
 
     @Override
     public void execute(BattleContext ctx) {
-        List<ActionEffect> actionEffects = attacker.getSkillManager().trigger(SkillTriggerType.TICKABLE, ctx, attacker, target);
-        if(skill.getInterval() <= 0){
+        if(skill.getTick()<= 0){
             return;
         }
-        Action action = new Action(ctx.getCurrentTime());
+        //过期不触发
+        if(skill.isExpired(ctx.getCurrentTime())){
+            // 如果技能过期，移除技能
+            attacker.getSkillManager().removeSkill(skill);
+            return;
+        }
 
+        List<ActionEffect> actionEffects = skill.tick(ctx , attacker, target);
+        Action action = new Action(ctx.getCurrentTime());
         ActionDetail actionDetail = new ActionDetail(attacker, null, ActionType.BUFF_TICK);
         actionDetail.addActionEffect(actionEffects);
         action.addActionDetail(actionDetail);
         ctx.addAction(action);
         // 注册下一次 Tick 事件
-        long nextTick = ctx.getCurrentTime() + skill.getInterval();
+        long nextTick = ctx.getCurrentTime() + skill.getTick();
         ctx.scheduleEvent(new SkillEvent(nextTick, EventPriority.BUFF_TICK, attacker, target, skill));
     }
 

@@ -28,6 +28,8 @@ public interface IEntity {
     void setProjectileTs(int projectileTs);
     void addShield(int shield);
 
+    int getLostHp();
+
     default TargetType getTargeType() { return TargetType.PRIORITY_FRONT; }
 
     default boolean canReleaseSkill() { return false; }

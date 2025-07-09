@@ -1,21 +1,31 @@
 package jedi.game.fatcory;
 
 import jedi.game.servercfg.enity.CfgSkill;
-import jedi.game.skill.DynamicShield;
-import jedi.game.skill.RandTickShield;
+import jedi.game.skill.*;
 import jedi.game.skill.base.ISkill;
-
-import javax.jws.Oneway;
 
 public enum SkillFatcory {
 
     NONE(0, "", null),
 
-    DYNAMIC_SHIELD(1000, "LangKey(当{1}{2}时，{3}概率对{4}添加{5}层护盾)_LangArgs(我方前军;暴击;1;自身;4)",DynamicShield::new),
+    SHIELD_DYNAMIC(1000, "LangKey(当{1}{2}时，{3}概率对{4}添加{5}层护盾)_LangArgs(我方前军;暴击;1;自身;4)", ShieldDynamic::new),
 
-    RAND_TICK_SHIELD(1001, "LangKey(当{1}{2}时，对{3}添加{4}层护盾，且接下来{5}秒内每{6}秒添加{7}层护盾)_LangArgs(我方任意单位;首次即将死亡时;自身;1000;5;0.5;100)",RandTickShield::new);
+    SHIELD_RAND_TICK(1001, "LangKey(当{1}{2}时，对{3}添加{4}层护盾，且接下来{5}秒内每{6}秒添加{7}层护盾)_LangArgs(我方任意单位;首次即将死亡时;自身;1000;5;0.5;100)", ShieldRandTick::new),
+
+    SHIELD_PERIODIC(1002, "LangKey({1}{2}后，每{3}秒对{4}添加{5}层护盾)_LangArgs(我方任意单位;战斗开始;1;自身;5)", ShieldPeriodic::new),
+
+    SHIELD_LOSS_BASED_PERIODIC(1003, "LangKey({1}{2}后，每{3}秒对{4}添加自身已损失兵力值{5}层护盾，且至少添加{6}层)_LangArgs(我方任意单位;战斗开始;1.5;自身;0.5%;1)", ShieldLossBasedPeriodic::new),
+
+    HP_DYNAMIC_RESTORE(2000, "LangKey(当{1}{2}时，{3}概率让{4}回复{5}点兵力)_LangArgs(我方任意单位;暴击;100%;自身;12)", HpDynamicRestore::new),
+
+    HP_PERIODIC_HEAL(2001, "LangKey(当{1}{2}{3}时，每{4}秒让{5}回复{6}点兵力，持续{7}秒)_LangArgs(我方任意单位;兵力首次低于;30%;0.3;90;6)", HpPeriodicHeal::new),
+
+    HP_TICK_RESTORE(2002, "LangKey({1}{2}后，每{3}秒让{4}回复{5}点兵力)_LangArgs(我方任意单位;战斗开始;0.8;自身;10)", HpTickRestore::new),
+
+    
 
 
+    ;
 
     int type;
 
