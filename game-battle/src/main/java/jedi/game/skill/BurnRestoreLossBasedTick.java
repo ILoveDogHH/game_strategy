@@ -2,6 +2,7 @@ package jedi.game.skill;
 
 import jedi.game.action.ActionEffect;
 import jedi.game.battle.BattleContext;
+import jedi.game.event.SkillEvent;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 import jedi.game.servercfg.enity.CfgSkill;
@@ -35,6 +36,13 @@ public class BurnRestoreLossBasedTick extends AbstractSkill {
 
     @Override
     public ActionEffect execute(BattleContext ctx, IEntity source, IEntity target, Player defender) {
+        if(getTick() <= 0){
+            return null;
+        }
+        // 注册下一次 Tick 事件
+        long nextTick = ctx.getCurrentTime() + getTick();
+        ctx.scheduleEvent(new SkillEvent(nextTick, source, defender, this));
+
         return null;
     }
 

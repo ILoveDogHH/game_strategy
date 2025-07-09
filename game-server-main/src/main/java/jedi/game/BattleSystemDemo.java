@@ -48,6 +48,7 @@ public class BattleSystemDemo {
         CfgSkill cfgSkill = CfgSkillDao.getSkill(1000001);
         ISkill iSkill = SkillFatcory.createSkill(cfgSkill);
 
+        p1.frontSoldier.getSkillManager().addSkill(iSkill);
 
 
 

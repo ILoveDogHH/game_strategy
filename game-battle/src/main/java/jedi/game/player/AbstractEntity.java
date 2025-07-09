@@ -1,6 +1,7 @@
 package jedi.game.player;
 
 import jedi.game.enums.PositionType;
+import jedi.game.skill.base.ISkill;
 import jedi.game.skill.base.SkillManager;
 
 /**
@@ -23,6 +24,7 @@ public abstract class AbstractEntity implements IEntity {
         this.name = name;
         this.owner = owner;
     }
+
 
     @Override
     public int getUid() {

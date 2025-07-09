@@ -46,7 +46,7 @@ public class BattleTeam {
         scheduleEvent(new HeroEvent(1000, playerA.general, playerB));
         scheduleEvent(new HeroEvent(1000, playerB.general, playerA));
 
-        triggerInitialTickableSkills(playerA, playerB);
+        // triggerInitialTickableSkills(playerA, playerB);
 
 
         BattleContext context = new BattleContext(this);
