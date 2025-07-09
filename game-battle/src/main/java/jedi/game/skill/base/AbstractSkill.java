@@ -11,7 +11,6 @@ import jedi.game.servercfg.enity.CfgSkill;
 
 import java.util.*;
 import java.util.stream.Collectors;
-
 public abstract class AbstractSkill implements ISkill {
 
     protected final int skillid;

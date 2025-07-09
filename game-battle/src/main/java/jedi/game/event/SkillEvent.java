@@ -20,8 +20,8 @@ public class SkillEvent extends AbstractEvent implements IUnitLinkedEvent {
     private final Player target;
     private final IEntity attacker;
 
-    public SkillEvent(long executeTime, EventPriority eventPriority, IEntity attacker, Player target, ISkill skill) {
-        super(executeTime, eventPriority);
+    public SkillEvent(long executeTime, IEntity attacker, Player target, ISkill skill) {
+        super(executeTime, EventPriority.BUFF_TICK);
         this.skill = skill;
         this.target = target;
         this.attacker = attacker;

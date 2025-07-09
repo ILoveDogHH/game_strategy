@@ -14,7 +14,7 @@ public enum SkillFatcory {
 
     SHIELD_PERIODIC(1002, "LangKey({1}{2}后，每{3}秒对{4}添加{5}层护盾)_LangArgs(我方任意单位;战斗开始;1;自身;5)", ShieldPeriodic::new),
 
-    SHIELD_LOSS_BASED_PERIODIC(1003, "LangKey({1}{2}后，每{3}秒对{4}添加自身已损失兵力值{5}层护盾，且至少添加{6}层)_LangArgs(我方任意单位;战斗开始;1.5;自身;0.5%;1)", ShieldLossBasedPeriodic::new),
+    SHIELD_LOSS_BASED_TICK(1003, "LangKey({1}{2}后，每{3}秒对{4}添加自身已损失兵力值{5}层护盾，且至少添加{6}层)_LangArgs(我方任意单位;战斗开始;1.5;自身;0.5%;1)", ShieldLossBasedTick::new),
 
     HP_DYNAMIC_RESTORE(2000, "LangKey(当{1}{2}时，{3}概率让{4}回复{5}点兵力)_LangArgs(我方任意单位;暴击;100%;自身;12)", HpDynamicRestore::new),
 
@@ -22,8 +22,19 @@ public enum SkillFatcory {
 
     HP_TICK_RESTORE(2002, "LangKey({1}{2}后，每{3}秒让{4}回复{5}点兵力)_LangArgs(我方任意单位;战斗开始;0.8;自身;10)", HpTickRestore::new),
 
-    
+    HP_TICK_RESTORE_LOSS_BASED(2003, "LangKey({1}{2}后，每{3}秒让{4}回复自身已损失兵力值{5}点兵力)_LangArgs(我方任意单位;战斗开始;1;自身;1%)", HpRestoreLossBasedTick::new),
 
+    ENERGY_DYNAMIC_RESTORE(3000, "LangKey(当{1}{2}时，{3}概率让{4}回复{5}点气力)_LangArgs(我方任意单位;暴击;60%;我方武将;2)", EnergyDynamicRestore::new),
+
+    ENERGY__RECOVER_TICK_EXPIRE(3001, "LangKey({1}{2}后，让{3}每{4}秒回复{5}点气力，持续{6}秒)_LangArgs(我方武将;释放大招;我方武将;0.2;1;2)", EnergyRecoverTickExpire::new),
+
+    ENERGY__RECOVER_TICK(3002, "LangKey({1}{2}后，每{3}秒让{4}回复{5}点气力)_LangArgs(我方武将;战斗开始;0.6;我方武将;2)", EnergyRecoverTick::new),
+
+    STUN_DYNAMIC_RAND(4000, "LangKey(当{1}{2}时，{3}概率让{4}进入{5}秒眩晕)_LangArgs(我方任意单位;暴击;50%;敌方前军;1)", StunDynamicRand::new),
+
+    FREEZE_STACK_DYNAMIC(5000,"LangKey(当{1}{2}时，{3}概率对{4}添加{5}层冰冻)_LangArgs(我方任意单位;暴击;100%;敌方前军;4)", FreezeStackDynamic::new),
+
+    FREEZE_STACK_DYNAMIC_TICK(5001, "LangKey({1}{2}后，每{3}秒对{4}添加{5}层冰冻)_LangArgs(我方前军;战斗开始;1;敌方全体;6)", FreezeStackDynamicTick::new),
 
     ;
 

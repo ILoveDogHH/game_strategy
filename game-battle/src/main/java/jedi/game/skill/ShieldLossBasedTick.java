@@ -9,7 +9,7 @@ import jedi.game.player.Player;
 import jedi.game.servercfg.enity.CfgSkill;
 import jedi.game.skill.base.AbstractSkill;
 //LangKey({1}{2}后，每{3}秒对{4}添加自身已损失兵力值{5}层护盾，且至少添加{6}层)_LangArgs(我方任意单位;战斗开始;1.5;自身;0.5%;1)
-public class ShieldLossBasedPeriodic extends AbstractSkill {
+public class ShieldLossBasedTick extends AbstractSkill {
 
 
     public long tick;
@@ -22,7 +22,7 @@ public class ShieldLossBasedPeriodic extends AbstractSkill {
     public int minShield;
 
 
-    public ShieldLossBasedPeriodic(CfgSkill cfgSkill) {
+    public ShieldLossBasedTick(CfgSkill cfgSkill) {
         super(cfgSkill);
     }
 
@@ -56,7 +56,7 @@ public class ShieldLossBasedPeriodic extends AbstractSkill {
 
         // 注册下一次 Tick 事件
         long nextTick = ctx.getCurrentTime() + getTick();
-        ctx.scheduleEvent(new SkillEvent(nextTick, EventPriority.BUFF_TICK, source, defender, this));
+        ctx.scheduleEvent(new SkillEvent(nextTick, source, defender, this));
         return actionEffect;
     }
 

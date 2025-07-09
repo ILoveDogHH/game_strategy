@@ -19,8 +19,8 @@ public class HeroEvent extends AbstractEvent implements IUnitLinkedEvent {
     private final IEntity attacker;
     private final Player target;
 
-    public HeroEvent(long executeTime, EventPriority eventPriority, IEntity attacker, Player target) {
-        super(executeTime, eventPriority);
+    public HeroEvent(long executeTime, IEntity attacker, Player target) {
+        super(executeTime, EventPriority.SKILL);
         this.attacker = attacker;
         this.target = target;
     }

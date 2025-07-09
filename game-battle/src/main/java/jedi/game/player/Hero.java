@@ -70,6 +70,11 @@ public class Hero extends AbstractEntity {
 
     }
 
+    @Override
+    public int getLostHp() {
+        return 0;
+    }
+
 
     @Override
     public int getenergyRecoverPerSecond() {
@@ -112,7 +117,7 @@ public class Hero extends AbstractEntity {
 
         // 4️⃣ 安排下一次 HeroEvent
         long delay = canRelease ? 0 : 1000; // 立即执行 or 1秒后
-        ctx.scheduleEvent(new HeroEvent(ctx.getCurrentTime() + delay, EventPriority.SKILL, enity, target));
+        ctx.scheduleEvent(new HeroEvent(ctx.getCurrentTime() + delay, enity, target));
     }
 
 

@@ -23,6 +23,16 @@ public class Random {
         return ThreadLocalRandom.current().nextDouble();
     }
 
+
+    /**
+     * 返回一个 [min, max] 区间的随机整数（含 min 和 max）
+     */
+    public static int randInt(int min, int max) {
+        if (min > max) throw new IllegalArgumentException("min > max");
+        return ThreadLocalRandom.current().nextInt(min, max + 1);
+    }
+
+
     /**
      * 返回一个 [min, max) 区间的随机整数
      */

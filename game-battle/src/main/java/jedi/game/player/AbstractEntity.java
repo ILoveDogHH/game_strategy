@@ -12,6 +12,8 @@ public abstract class AbstractEntity implements IEntity {
     protected String name;
     protected Player owner;
     protected int projectileTs;
+    protected long stun_ts;
+
     protected SkillManager buffManager = new SkillManager();
 
     public AbstractEntity(PositionType positionType, String name, Player owner) {
@@ -72,4 +74,8 @@ public abstract class AbstractEntity implements IEntity {
     }
 
 
+    @Override
+    public void setStunTs(long stunTs) {
+        this.stun_ts = stunTs;
+    }
 }
