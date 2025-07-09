@@ -52,7 +52,7 @@ public enum SkillFatcory {
 
     BURN_RESTORE_LOSS_BASED_TICK(7002, "LangKey({1}{2}后，每{3}秒对{4}添加自身已损失兵力值{5}层燃烧，且至少添加{6}层)_LangArgs(我方前军;战斗开始;1500;敌方后军;0.6%;1)", BurnRestoreLossBasedTick::new),
 
-    
+
     ;
 
     int type;
