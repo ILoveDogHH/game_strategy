@@ -23,7 +23,7 @@ public class FreezeStackDynamic extends AbstractSkill {
 
     @Override
     public void deduceParams(String params) {
-        String[] param = params.split(",");
+        String[] param = params.split(";");
         this.caster = param[0];
         this.trigger = Integer.parseInt(param[1]);
         this.rate = Integer.parseInt(param[2]);

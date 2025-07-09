@@ -13,6 +13,7 @@ public abstract class AbstractEntity implements IEntity {
     protected Player owner;
     protected int projectileTs;
     protected long stun_ts;
+    protected int vulnerable = 0;
 
     protected SkillManager buffManager = new SkillManager();
 
@@ -77,5 +78,10 @@ public abstract class AbstractEntity implements IEntity {
     @Override
     public void setStunTs(long stunTs) {
         this.stun_ts = stunTs;
+    }
+
+    @Override
+    public void addVulnerable(long vulnerable) {
+        this.vulnerable += vulnerable;
     }
 }

@@ -28,6 +28,7 @@ public interface IEntity {
     void setProjectileTs(int projectileTs);
     void addShield(int shield);
     void setStunTs(long stunTs);
+    void addVulnerable(long vulnerable);
 
     int getLostHp();
 

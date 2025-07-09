@@ -10,19 +10,9 @@ import jedi.game.skill.base.AbstractSkill;
 public class FreezeRestoreLossBasedTick extends AbstractSkill {
 
 
-    //施法者位置
-    public String caster;
+    public double percent;
 
-    //触发类型
-    public int trigger;
-
-    public int tick;
-
-    //目标类型
-    public int target;
-
-
-
+    public int minStack;
 
 
     public FreezeRestoreLossBasedTick(CfgSkill cfgSkill) {
@@ -31,8 +21,17 @@ public class FreezeRestoreLossBasedTick extends AbstractSkill {
 
     @Override
     public void deduceParams(String params) {
-
+        String[] param = params.split(";");
+        this.caster = param[0];
+        this.trigger = Integer.parseInt(param[1]);
+        this.tick = Long.parseLong(param[2]);
+        this.target = Integer.parseInt(param[3]);
+        this.percent = Double.parseDouble(param[4]);
+        this.minStack = Integer.parseInt(param[5]);
     }
+
+
+
 
     @Override
     public ActionEffect execute(BattleContext ctx, IEntity source, IEntity target, Player defender) {
@@ -41,6 +40,15 @@ public class FreezeRestoreLossBasedTick extends AbstractSkill {
 
     @Override
     public ActionEffect executeTick(BattleContext ctx, IEntity source, IEntity target, Player defender) {
-        return null;
+        int lostHp = target.getLostHp(); // 计算损失的生命值
+
+        int addStack = (int) Math.max(lostHp * percent, minStack); // 计算添加的冰冻层数，至少为minStack层
+
+        target.addFreeze(addStack);
+        ActionEffect actionEffect = getActionEffect(target);
+        actionEffect.setValue(addStack);
+        return actionEffect;
     }
+
+
 }

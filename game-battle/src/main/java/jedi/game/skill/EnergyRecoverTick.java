@@ -22,7 +22,7 @@ public class EnergyRecoverTick extends AbstractSkill {
 
     @Override
     public void deduceParams(String params) {
-        String[] param = params.split(",");
+        String[] param = params.split(";");
         this.caster = param[0];
         this.trigger = Integer.parseInt(param[1]);
         this.tick = Long.parseLong(param[2]);

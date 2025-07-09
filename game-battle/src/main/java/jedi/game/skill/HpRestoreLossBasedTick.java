@@ -11,7 +11,7 @@ public class HpRestoreLossBasedTick extends AbstractSkill {
 
 
 
-    public int percent;
+    public double percent;
 
 
     public HpRestoreLossBasedTick(CfgSkill cfgSkill) {
@@ -20,12 +20,12 @@ public class HpRestoreLossBasedTick extends AbstractSkill {
 
     @Override
     public void deduceParams(String params) {
-        String[] param = params.split(",");
+        String[] param = params.split(";");
         this.caster = param[0];
         this.trigger = Integer.parseInt(param[1]);
         this.tick = Long.parseLong(param[2]);
         this.target = Integer.parseInt(param[3]);
-        this.percent = Integer.parseInt(param[4]);
+        this.percent = Double.parseDouble(param[4]);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class HpRestoreLossBasedTick extends AbstractSkill {
 
         int lostHp = target.getLostHp(); // 计算损失的生命值
 
-        int addHp = (int) (lostHp * percent / 100.0); // 根据百分比计算恢复的生命值
+        int addHp = (int) (lostHp * percent ); // 根据百分比计算恢复的生命值
         if(addHp <= 0) {
             return null; // 如果计算结果小于等于0，则不执行恢复
         }
