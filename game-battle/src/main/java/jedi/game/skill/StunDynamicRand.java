@@ -11,17 +11,10 @@ import jedi.game.utils.Random;
 // LangKey(当{1}{2}时，{3}概率对{4}添加{5）——（6）秒眩晕)_LangArgs(我方武将;释放大招;100%;敌方全体;0.2;0.5)
 public class StunDynamicRand extends AbstractSkill {
 
-    //施法者位置
-    public String caster;
 
-    //触发类型
-    public int trigger;
 
     public int rate; //触发概率，百分比
 
-
-    //目标类型
-    public int target;
 
     public int stunDuration1; //眩晕持续时间，单位秒
 

@@ -36,6 +36,8 @@ public enum SkillFatcory {
 
     FREEZE_STACK_DYNAMIC_TICK(5001, "LangKey({1}{2}后，每{3}秒对{4}添加{5}层冰冻)_LangArgs(我方前军;战斗开始;1;敌方全体;6)", FreezeStackDynamicTick::new),
 
+    FREEZE_RESTORE_LOSS_BASED_TICK(5002, "LangKey({1}{2}后，每{3}秒对{4}添加自身已损失兵力值{5}层冰冻，且至少添加{6}层)_LangArgs(我方前军;战斗开始;1.5;敌方全体;0.6%;1)", FreezeRestoreLossBasedTick::new),
+
     ;
 
     int type;

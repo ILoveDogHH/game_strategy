@@ -21,7 +21,7 @@ public class SkillEvent extends AbstractEvent implements IUnitLinkedEvent {
     private final IEntity attacker;
 
     public SkillEvent(long executeTime, IEntity attacker, Player target, ISkill skill) {
-        super(executeTime, EventPriority.BUFF_TICK);
+        super(executeTime, EventPriority.SKILL_TICK);
         this.skill = skill;
         this.target = target;
         this.attacker = attacker;
@@ -47,7 +47,7 @@ public class SkillEvent extends AbstractEvent implements IUnitLinkedEvent {
         ctx.addAction(action);
         // 注册下一次 Tick 事件
         long nextTick = ctx.getCurrentTime() + skill.getTick();
-        ctx.scheduleEvent(new SkillEvent(nextTick, EventPriority.BUFF_TICK, attacker, target, skill));
+        ctx.scheduleEvent(new SkillEvent(nextTick, attacker, target, skill));
     }
 
 

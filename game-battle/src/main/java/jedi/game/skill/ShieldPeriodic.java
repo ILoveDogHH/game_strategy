@@ -9,19 +9,7 @@ import jedi.game.skill.base.AbstractSkill;
 // LangKey({1}{2}后，每{3}秒对{4}添加{5}层护盾)_LangArgs(我方任意单位;战斗开始;1;自身;5)
 public class ShieldPeriodic extends AbstractSkill {
 
-    //施法者位置
-    public String caster;
-
-    //触发类型
-    public int trigger;
-
-    //目标类型
-    public int target;
-
-
     public int stack; // 叠加层数
-
-
 
 
     public ShieldPeriodic(CfgSkill cfgSkill) {

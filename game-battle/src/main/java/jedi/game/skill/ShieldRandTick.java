@@ -16,10 +16,6 @@ public class ShieldRandTick extends AbstractSkill {
     private int stack0;
 
 
-
-    //每次触发的时间间隔
-    private double tick;
-
     private int stack;
 
     public ShieldRandTick(CfgSkill cfgSkill) {
@@ -35,7 +31,7 @@ public class ShieldRandTick extends AbstractSkill {
         this.target = Integer.valueOf(param[3]);
         this.stack0 = Integer.valueOf(param[4]);
         this.expireTime = Integer.valueOf(param[5]);
-        this.tick = Double.valueOf(param[6]);
+        this.tick = Long.valueOf(param[6]);
         this.stack = Integer.valueOf(param[7]);
     }
 
@@ -49,7 +45,7 @@ public class ShieldRandTick extends AbstractSkill {
         setExpireTime(ctx.getCurrentTime() + expireTime); //设置buff的过期时间
         // 注册下一次 Tick 事件
         long nextTick = ctx.getCurrentTime() + getTick();
-        ctx.scheduleEvent(new SkillEvent(nextTick, EventPriority.BUFF_TICK, source, defender, this));
+        ctx.scheduleEvent(new SkillEvent(nextTick, source, defender, this));
         return actionEffect;
     }
 

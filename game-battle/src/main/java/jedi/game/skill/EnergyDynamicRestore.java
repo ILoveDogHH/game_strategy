@@ -11,17 +11,7 @@ import jedi.game.utils.Random;
 // LangKey(当{1}{2}时，{3}概率让{4}回复{5}点气力)_LangArgs(我方任意单位;暴击;60%;我方武将;2)
 public class EnergyDynamicRestore extends AbstractSkill {
 
-    //施法者位置
-    public String caster;
-
-    //触发类型
-    public int trigger;
-
     public double rate; //触发概率
-
-    //目标类型
-    public int target;
-
     public int addEnergy;
 
 

@@ -10,17 +10,9 @@ import jedi.game.utils.Random;
 
 //LangKey(当{1}{2}时，{3}概率对{4}添加{5}层冰冻)_LangArgs(我方任意单位;暴击;100%;敌方前军;4)
 public class FreezeStackDynamic extends AbstractSkill {
-    //施法者位置
-    public String caster;
-
-    //触发类型
-    public int trigger;
 
     //触发概率
     public int rate;
-
-    //目标类型
-    public int target;
 
     public int stack;
 

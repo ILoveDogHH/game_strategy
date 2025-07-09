@@ -8,15 +8,10 @@ import jedi.game.servercfg.enity.CfgSkill;
 import jedi.game.skill.base.AbstractSkill;
 // LangKey({1}{2}后，每{3}秒对{4}添加{5}层冰冻)_LangArgs(我方前军;战斗开始;1;敌方全体;6)
 public class FreezeStackDynamicTick extends AbstractSkill {
-    //施法者位置
-    public String caster;
 
-    //触发类型
-    public int trigger;
 
-    //目标类型
-    public int target;
-
+    //冰冻层数
+    public int freezeStack;
 
 
     public FreezeStackDynamicTick(CfgSkill cfgSkill) {
@@ -25,7 +20,12 @@ public class FreezeStackDynamicTick extends AbstractSkill {
 
     @Override
     public void deduceParams(String params) {
-
+        String[] param = params.split(",");
+        this.caster = param[0];
+        this.trigger = Integer.parseInt(param[1]);
+        this.tick = Long.parseLong(param[2]);
+        this.target = Integer.parseInt(param[3]);
+        this.freezeStack = Integer.parseInt(param[4]);
     }
 
     @Override
@@ -35,10 +35,9 @@ public class FreezeStackDynamicTick extends AbstractSkill {
 
     @Override
     public ActionEffect executeTick(BattleContext ctx, IEntity source, IEntity target, Player defender) {
+        target.addFreeze(freezeStack);
         ActionEffect actionEffect = getActionEffect(target);
-
-
-
-        return null;
+        actionEffect.setValue(freezeStack);
+        return actionEffect;
     }
 }

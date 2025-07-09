@@ -15,8 +15,7 @@ public abstract class AbstractSkill implements ISkill {
 
     protected final int skillid;
     protected final int skill_star;
-    //过期时间
-    public long expireTime = -1;
+
 
     //施法者位置
     public String caster;
@@ -26,6 +25,11 @@ public abstract class AbstractSkill implements ISkill {
 
     //目标类型
     public int target;
+
+    public long tick = -1; // 间隔时间，单位毫秒
+
+    //过期时间
+    public long expireTime = -1;
 
     //伤害类型
     protected final EffectType effectType;
@@ -122,6 +126,10 @@ public abstract class AbstractSkill implements ISkill {
         return expireTime;
     }
 
+    @Override
+    public long getTick() {
+        return tick;
+    }
 
     @Override
     public Set<Integer> getCaster() {

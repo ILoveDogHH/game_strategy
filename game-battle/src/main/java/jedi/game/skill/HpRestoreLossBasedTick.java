@@ -9,16 +9,7 @@ import jedi.game.skill.base.AbstractSkill;
 //LangKey({1}{2}后，每{3}秒让{4}回复自身已损失兵力值{5}点兵力)_LangArgs(我方任意单位;战斗开始;1;自身;1%)
 public class HpRestoreLossBasedTick extends AbstractSkill {
 
-    //施法者位置
-    public String caster;
 
-    //触发类型
-    public int trigger;
-
-    public int tick;
-
-    //目标类型
-    public int target;
 
     public int percent;
 
@@ -32,7 +23,7 @@ public class HpRestoreLossBasedTick extends AbstractSkill {
         String[] param = params.split(",");
         this.caster = param[0];
         this.trigger = Integer.parseInt(param[1]);
-        this.tick = Integer.parseInt(param[2]);
+        this.tick = Long.parseLong(param[2]);
         this.target = Integer.parseInt(param[3]);
         this.percent = Integer.parseInt(param[4]);
     }

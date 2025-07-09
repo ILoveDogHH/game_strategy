@@ -15,10 +15,13 @@ public enum EventPriority {
 
     /**
      * BUFF_TICK（优先级 200）：
-     * 表示 Buff 定时触发（如持续伤害、持续治疗）的事件。
+     * 表示 技能 定时触发（如持续伤害、持续治疗）的事件。
      * 通常在时间轮询中定期执行。
      */
-    BUFF_TICK(200),
+    SKILL_TICK(200),
+
+
+
 
     /**
      * ATTACK（优先级 300）：
@@ -26,11 +29,14 @@ public enum EventPriority {
      */
     ATTACK(300),
 
+
+
     /**
-     * SKILL（优先级 400）：
-     * 表示技能释放事件，包括主动技能和气力技等。
+     * 大招（优先级 400）：
+     * 表示技能释放事件，通常在玩家或敌人使用技能时触发。
      */
-    SKILL(400),
+
+    ULTIMATE_Skill(400),
 
     /**
      * OTHER（优先级 0）：

@@ -10,21 +10,9 @@ import jedi.game.skill.base.AbstractSkill;
 //LangKey({1}{2}后，让{3}每{4}秒回复{5}点气力，持续{6}秒)_LangArgs(我方武将;释放大招;我方武将;0.2;1;2)
 public  class EnergyRecoverTickExpire extends AbstractSkill {
 
-    //施法者位置
-    public String caster;
 
-    //触发类型
-    public int trigger;
-
-    //目标类型
-    public int target;
-
-    public int tick;
 
     public int energyRecover;
-
-    public int expireTime;
-
 
 
     public EnergyRecoverTickExpire(CfgSkill cfgSkill) {
@@ -37,9 +25,9 @@ public  class EnergyRecoverTickExpire extends AbstractSkill {
         this.caster = param[0];
         this.trigger = Integer.parseInt(param[1]);
         this.target = Integer.parseInt(param[2]);
-        this.tick = Integer.parseInt(param[3]);
+        this.tick = Long.parseLong(param[3]);
         this.energyRecover = Integer.parseInt(param[4]);
-        this.expireTime = Integer.parseInt(param[5]);
+        this.expireTime = Long.parseLong(param[5]);
     }
 
     @Override

@@ -17,9 +17,7 @@ import java.util.stream.Collectors;
 //LangKey({1}{2}时，对{3}添加{4}层护盾)_LangArgs(前军;暴击;自身;4)
 public class ShieldDynamic extends AbstractSkill {
 
-    private String caster;
-    private int target;
-    private int trigger;
+
     private  int stack;    // 层数
     private double rate; // 触发率
 

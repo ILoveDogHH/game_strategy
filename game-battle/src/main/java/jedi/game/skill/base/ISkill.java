@@ -30,13 +30,13 @@ public interface ISkill {
 
     void setExpireTime(long expireTime);
 
-    long getExpireTime();
+
+
+    public long getExpireTime();
+
+    public long getTick();
 
     boolean isExpired(long currentTime);
 
-    /** * 每次触发的间隔时间
-     * @return
-     */
-    default long getTick(){return -1;};
 
 }

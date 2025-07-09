@@ -12,9 +12,6 @@ import jedi.game.skill.base.AbstractSkill;
 public class ShieldLossBasedTick extends AbstractSkill {
 
 
-    public long tick;
-
-
     //每次添加的护盾层数
     public double percentShield;
 
@@ -54,9 +51,7 @@ public class ShieldLossBasedTick extends AbstractSkill {
         target.addShield(stack0);
         actionEffect.setValue(stack0);
 
-        // 注册下一次 Tick 事件
-        long nextTick = ctx.getCurrentTime() + getTick();
-        ctx.scheduleEvent(new SkillEvent(nextTick, source, defender, this));
+
         return actionEffect;
     }
 

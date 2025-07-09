@@ -20,7 +20,7 @@ public class HeroEvent extends AbstractEvent implements IUnitLinkedEvent {
     private final Player target;
 
     public HeroEvent(long executeTime, IEntity attacker, Player target) {
-        super(executeTime, EventPriority.SKILL);
+        super(executeTime, EventPriority.ULTIMATE_Skill);
         this.attacker = attacker;
         this.target = target;
     }
@@ -52,7 +52,7 @@ public class HeroEvent extends AbstractEvent implements IUnitLinkedEvent {
 
         // 3️⃣ 安排下一次气力恢复事件（无论是否释放了技能）
         long nextTime = context.getCurrentTime() + 1000;
-        context.scheduleEvent(new HeroEvent(nextTime, EventPriority.SKILL, attacker, target));
+        context.scheduleEvent(new HeroEvent(nextTime, attacker, target));
     }
 
 

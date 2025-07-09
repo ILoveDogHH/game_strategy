@@ -43,8 +43,8 @@ public class BattleTeam {
 
 
 //        // 初始化武将气力恢复事件
-        scheduleEvent(new HeroEvent(1000, EventPriority.SKILL, playerA.general, playerB));
-        scheduleEvent(new HeroEvent(1000, EventPriority.SKILL, playerB.general, playerA));
+        scheduleEvent(new HeroEvent(1000, playerA.general, playerB));
+        scheduleEvent(new HeroEvent(1000, playerB.general, playerA));
 
         triggerInitialTickableSkills(playerA, playerB);
 
@@ -97,7 +97,7 @@ public class BattleTeam {
                     if(next <= 0){
                         continue;
                     }
-                    scheduleEvent(new SkillEvent(next, EventPriority.BUFF_TICK, unit, target, skill));
+                    scheduleEvent(new SkillEvent(next, unit, target, skill));
                 }
             }
         }
