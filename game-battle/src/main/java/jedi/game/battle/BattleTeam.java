@@ -92,7 +92,7 @@ public class BattleTeam {
     public void triggerInitialTickableSkills(Player atker, Player target) {
         for (IEntity unit : atker.getAllEnity()) {
             for (ISkill skill : unit.getSkillManager().getSkills()) {
-                if(skill.getTriggerTypes().contains(SkillTriggerType.TICKABLE)){
+                if(skill.getTriggerType() == SkillTriggerType.TICKABLE){
                     long next = skill.getInterval();
                     if(next <= 0){
                         continue;

@@ -21,6 +21,8 @@ public class Soldier extends AbstractEntity {
     //被冰冻的层数
     public int freeze = 0;
 
+    public int shield = 0;
+
 
     protected SkillManager buffManager = new SkillManager();
 
@@ -133,7 +135,10 @@ public class Soldier extends AbstractEntity {
         return maxHp;
     }
 
-
+    @Override
+    public void addShield(int shield) {
+        this.shield = Math.max(0, this.shield + shield); // 确保盾牌值不会为负
+    }
 
 
 }

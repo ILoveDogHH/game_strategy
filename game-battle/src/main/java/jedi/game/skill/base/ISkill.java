@@ -21,13 +21,21 @@ public interface ISkill {
 
     Set<Integer> getCaster();
 
-    SkillTriggerType getTriggerTypes();  // 声明自己要监听哪些事件
+    SkillTriggerType getTriggerType();  // 声明自己要监听哪些事件
 
     List<ActionEffect> apply(BattleContext ctx, IEntity source, Player target);
 
+    List<ActionEffect> tick(BattleContext ctx, IEntity source, Player target);
 
 
-
+    /**
+     * 过期时间
+     * @return
+     */
     default long getInterval(){return -1;};
 
+    /** * 每次触发的间隔时间
+     * @return
+     */
+    default double getTick(){return -1;};
 }

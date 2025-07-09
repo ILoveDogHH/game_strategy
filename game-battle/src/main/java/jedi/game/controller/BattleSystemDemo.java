@@ -45,38 +45,6 @@ public class BattleSystemDemo {
         p2.general.setOwner(p2);
 
 
-        for(Integer i : atkBuff){
-            ISkill skill = null;
-            if(i == 20001){
-                skill = new VitalStrikeBuff(20001, "200");
-            }
-            if(i == 30001){
-                skill = new CritFreezeBuff(30001, "4");
-            }
-
-            if(i == 40001){
-                skill = new RecoverLostHpBuff(40001, "1000,0.1");
-            }
-            p1.frontSoldier.getSkillManager().addSkill(skill);
-        }
-
-
-        for(Integer i : defBuff){
-            ISkill skill = null;
-            if(i == 20001){
-                skill = new VitalStrikeBuff(20001, "200");
-            }
-            if(i == 30001){
-                skill = new CritFreezeBuff(30001, "4");
-            }
-
-            if(i == 40001){
-                skill = new RecoverLostHpBuff(40001, "1000,0.1");
-            }
-            p2.frontSoldier.getSkillManager().addSkill(skill);
-        }
-
-
         BattleTeam battle = new BattleTeam(p1, p2);
         List<String> actions = battle.run();
         return actions;

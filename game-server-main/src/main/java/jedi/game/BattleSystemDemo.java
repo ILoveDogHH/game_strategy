@@ -45,7 +45,7 @@ public class BattleSystemDemo {
         p2.general.setOwner(p2);
 
 
-        CfgSkill cfgSkill = CfgSkillDao.getSkill(10);
+        CfgSkill cfgSkill = CfgSkillDao.getSkill(1000001);
         ISkill iSkill = SkillFatcory.createSkill(cfgSkill);
 
 

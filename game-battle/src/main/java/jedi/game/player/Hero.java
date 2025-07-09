@@ -65,6 +65,11 @@ public class Hero extends AbstractEntity {
         return 0;
     }
 
+    @Override
+    public void addShield(int shield) {
+
+    }
+
 
     @Override
     public int getenergyRecoverPerSecond() {

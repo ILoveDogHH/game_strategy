@@ -46,4 +46,6 @@ public interface IEntity {
     default int getCritMultiplier() {
         return 0;
     }
+
+
 }

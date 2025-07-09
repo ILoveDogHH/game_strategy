@@ -13,7 +13,7 @@ import lombok.Setter;
  * </p>
  *
  * @author zhanglefeng
- * @since 2025-07-08
+ * @since 2025-07-09
  */
 @Getter
 @Setter
@@ -24,6 +24,11 @@ public class CfgSkill implements Serializable {
 
     @TableId(value = "skill_id", type = IdType.AUTO)
     private Integer skill_id;
+
+    /**
+     * 星级
+     */
+    private Integer star;
 
     /**
      * 技能名字
@@ -41,11 +46,6 @@ public class CfgSkill implements Serializable {
     private Integer qua;
 
     /**
-     * 星级
-     */
-    private Integer star;
-
-    /**
      * xx,xx  流派
      */
     private String sect;
@@ -58,23 +58,12 @@ public class CfgSkill implements Serializable {
     /**
      * 10,1
      */
-    private String param;
-
-    /**
-     * 触发节点
-     */
-    private String 
-trigger;
+    private String params;
 
     /**
      * 伤害类型
      */
     private Integer effect;
-
-    /**
-     * 生效目标
-     */
-    private Integer target;
 
     /**
      * 技能定期时间  >0 可定期
@@ -90,9 +79,4 @@ trigger;
      * 技能飞行道具
      */
     private Integer projectile;
-
-    /**
-     * 生效位置 xx,xx,xx
-     */
-    private String effective_position;
 }

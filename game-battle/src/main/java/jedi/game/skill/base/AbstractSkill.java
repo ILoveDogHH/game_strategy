@@ -7,6 +7,7 @@ import jedi.game.enums.SkillTriggerType;
 import jedi.game.enums.TargetType;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
+import jedi.game.servercfg.enity.CfgSkill;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,10 +22,10 @@ public abstract class AbstractSkill implements ISkill {
     protected final EffectType effectType;
 
 
-    public AbstractSkill(int skillid, int skillStar, int effectValue) {
-        this.skillid = skillid;
-        skill_star = skillStar;
-        this.effectType = EffectType.getEffectType(effectValue);
+    public AbstractSkill(CfgSkill cfgSkill) {
+        this.skillid = cfgSkill.getSkill_id();
+        skill_star = cfgSkill.getStar();
+        this.effectType = EffectType.getEffectType(cfgSkill.getEffect());
     }
 
 
@@ -57,8 +58,35 @@ public abstract class AbstractSkill implements ISkill {
     }
 
 
+    @Override
+    public List<ActionEffect> tick(BattleContext ctx, IEntity source, Player target) {
+        if(!getCaster().contains(source.getPosition())){
+            return new ArrayList<>();
+        }
+        List<IEntity> entity = getEffectIentity(source, target, getTargetType());
+        List<ActionEffect> actionEffects = new ArrayList<>();
+        for(IEntity e : entity){
+            ActionEffect actionEffect = tiggertick(ctx, source, e);
+            if(actionEffect != null){
+                actionEffects.add(actionEffect);
+            }
+        }
+        return actionEffects;
+    }
+
+
     public abstract ActionEffect execute(BattleContext ctx, IEntity source, IEntity target);
 
+    public  ActionEffect tiggertick(BattleContext ctx, IEntity source, IEntity target){
+        //错误兼容处理， 无间隔的不触发
+        if(getTick() <= 0){
+            return null;
+        }
+        return executeTick(ctx, source, target);
+    }
+
+
+    public abstract ActionEffect executeTick(BattleContext ctx, IEntity source, IEntity target);
 
 
     @Override

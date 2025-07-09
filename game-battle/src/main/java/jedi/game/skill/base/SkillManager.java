@@ -16,10 +16,10 @@ public class SkillManager {
         skills.add(buff);
     }
 
-    public List<ActionEffect> trigger(SkillTriggerType triggerType, BattleContext ctx, IEntity source, Player target) {
+    public List<ActionEffect> tick(SkillTriggerType triggerType, BattleContext ctx, IEntity source, Player target) {
         List<ActionEffect> result = new ArrayList<>();
         for (ISkill buff : skills) {
-            if (buff.getTriggerTypes() == triggerType) {
+            if (buff.getTriggerType() == triggerType) {
                 List<ActionEffect> ab = buff.apply(ctx, source, target);
                 for(ActionEffect ae : ab){
                     if (ae != null && ae.getValue() > 0) {
@@ -30,6 +30,26 @@ public class SkillManager {
         }
         return result;
     }
+
+
+
+    public List<ActionEffect> trigger(SkillTriggerType triggerType, BattleContext ctx, IEntity source, Player target) {
+        List<ActionEffect> result = new ArrayList<>();
+        for (ISkill buff : skills) {
+            if (buff.getTriggerType() == triggerType) {
+                List<ActionEffect> ab = buff.apply(ctx, source, target);
+                for(ActionEffect ae : ab){
+                    if (ae != null && ae.getValue() > 0) {
+                        result.add(ae);
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+
+
 
 
     public List<ISkill> getSkills() {
