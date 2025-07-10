@@ -32,9 +32,8 @@ public class SkillEvent extends AbstractEvent implements IUnitLinkedEvent {
         if(skill.getTick()<= 0){
             return;
         }
-        //过期不触发
-        if(skill.isExpired(ctx.getCurrentTime())){
-            // 如果技能过期，移除技能
+        // 玩家死亡或者技能过期，则移除技能 + 清除未来事件
+        if (skill.isExpired(ctx.getCurrentTime())) {
             attacker.getSkillManager().removeSkill(skill);
             return;
         }

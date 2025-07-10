@@ -1,5 +1,6 @@
 package jedi.game.action;
 
+import jedi.game.damage.Damage;
 import jedi.game.enums.ActionType;
 import jedi.game.player.IEntity;
 

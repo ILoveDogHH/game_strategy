@@ -2,7 +2,7 @@ package jedi.game.event;
 
 import jedi.game.action.Action;
 import jedi.game.action.ActionDetail;
-import jedi.game.action.DamageType;
+import jedi.game.enums.DamageType;
 import jedi.game.battle.BattleContext;
 import jedi.game.enums.ActionType;
 import jedi.game.enums.EventPriority;

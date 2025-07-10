@@ -1,7 +1,11 @@
-package jedi.game.action;
+package jedi.game.damage;
 
+import jedi.game.action.Action;
+import jedi.game.action.ActionDetail;
+import jedi.game.action.ActionEffect;
 import jedi.game.battle.BattleContext;
 import jedi.game.enums.ActionType;
+import jedi.game.enums.DamageType;
 import jedi.game.enums.SkillTriggerType;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
@@ -19,10 +23,13 @@ public class DamageCalculator {
      * @return 实际造成的伤害
      */
     public static Action calculateDamage(BattleContext ctx, IEntity attacker, Player target, int baseDamage, DamageType damageType, ActionType actionType) {
-        double finalDamage = baseDamage;
+
+        double finalDamage = 0;
         Action action = new Action(ctx.getCurrentTime());
         List<IEntity> defenders = TargetSelector.selectTargets(attacker, target, attacker.getTargeType());
         for(IEntity defender : defenders){
+            // 计算出不同类型的伤害
+            finalDamage = damageType.damageCalculator.calculate(ctx, attacker, defender, 0);
             ActionDetail actionDetail = new ActionDetail( attacker, defender, actionType);
             boolean isCrit = false;
             boolean isDodged = false;

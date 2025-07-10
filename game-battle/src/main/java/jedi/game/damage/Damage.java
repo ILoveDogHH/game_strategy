@@ -1,4 +1,4 @@
-package jedi.game.action;
+package jedi.game.damage;
 
 
 /**
