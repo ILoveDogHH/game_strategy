@@ -13,7 +13,6 @@ public interface IEntity {
     int getUid();
     int getPosition();
     String getName();
-    Player getOwner();
     SkillManager getSkillManager();
     TargetType getTargeType();
     double getCritRate();

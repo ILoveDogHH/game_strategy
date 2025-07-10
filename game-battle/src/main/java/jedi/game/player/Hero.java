@@ -16,13 +16,12 @@ public class Hero extends AbstractEntity implements IEnergyUnit {
     public int projectile_ts;
 
 
-    public Hero(PositionType positionType, String name, int maxEnergy, int energyRecoverPerSecond, Player owner, int projectileTs) {
-        super(positionType, name, owner);
+    public Hero(PositionType positionType, String name, int maxEnergy, int energyRecoverPerSecond, int projectileTs) {
+        super(positionType, name);
         this.positionType = positionType;
         this.name = name;
         this.maxEnergy = maxEnergy;
         this.energyRecoverPerSecond = energyRecoverPerSecond;
-        this.owner = owner;
         this.currentEnergy = 0;
         this.projectile_ts = projectileTs;
     }

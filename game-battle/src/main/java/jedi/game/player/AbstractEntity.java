@@ -11,15 +11,13 @@ public abstract class AbstractEntity implements IEntity {
     protected int uid;
     protected PositionType positionType;
     protected String name;
-    protected Player owner;
 
 
     protected SkillManager buffManager = new SkillManager();
 
-    public AbstractEntity(PositionType positionType, String name, Player owner) {
+    public AbstractEntity(PositionType positionType, String name) {
         this.positionType = positionType;
         this.name = name;
-        this.owner = owner;
     }
 
 
@@ -38,10 +36,7 @@ public abstract class AbstractEntity implements IEntity {
         return name;
     }
 
-    @Override
-    public Player getOwner() {
-        return owner;
-    }
+
 
     @Override
     public SkillManager getSkillManager() {

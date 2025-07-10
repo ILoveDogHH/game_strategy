@@ -37,8 +37,8 @@ public class Soldier extends AbstractEntity implements IBattleUnit{
 
     // 构造方法，用于初始化士兵的属性
     public Soldier(PositionType positionType, String name, int maxHp, int attack, double critRate, double critMultiplier,
-                   double dodgeRate, double attackSpeed, Player owner, int projectileTs) {
-        super(positionType, name, owner);
+                   double dodgeRate, double attackSpeed, int projectileTs) {
+        super(positionType, name);
         this.positionType = positionType;
         this.name = name;
         this.maxHp = maxHp;
@@ -48,7 +48,6 @@ public class Soldier extends AbstractEntity implements IBattleUnit{
         this.critMultiplier = critMultiplier;
         this.dodgeRate = dodgeRate;
         this.attackSpeed = attackSpeed;
-        this.owner = owner;
         this.projectileTs = projectileTs;
     }
 
@@ -86,12 +85,6 @@ public class Soldier extends AbstractEntity implements IBattleUnit{
         this.currentHp = Math.min(this.maxHp, this.currentHp + amount);
     }
 
-
-    // 获取士兵所属的玩家
-    @Override
-    public Player getOwner() {
-        return owner;
-    }
 
     @Override
     public SkillManager getSkillManager() {
