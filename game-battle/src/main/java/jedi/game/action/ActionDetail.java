@@ -20,24 +20,12 @@ public class ActionDetail {
 
     public final String sourceName;
 
-    //测试数据方便展示
-    public final int sourceHp;
-
-    //测试数据方便展示
-    public final int sourceMaxHp;
-
-
     /** 目标 uid */
     public final int targetUid;
 
     /** 目标位置 */
     public final int targetPosition;
 
-    //测试数据方便展示
-    public  int targetHp;
-
-    //测试数据方便展示
-    public final int targetMaxHp;
 
     public final String targetName;
 
@@ -58,13 +46,9 @@ public class ActionDetail {
         this.sourceUid = attker.getUid();
         this.sourcePosition = attker.getPosition();
         this.sourceName = attker.getName();
-        this.sourceHp = attker.getCurrentHp();
-        this.sourceMaxHp = attker.getMaxHp();
         this.targetUid =defender == null ? 0 :  defender.getUid();
         this.targetPosition = defender == null ? 0 : defender.getPosition();
         this.targetName = defender == null ? "" : defender.getName();
-        this.targetHp = defender == null ? 0 : defender.getCurrentHp();
-        this.targetMaxHp = defender == null ? 0 : defender.getMaxHp();
         this.actionType = actionType;
     }
 

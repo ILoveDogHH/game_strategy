@@ -1,6 +1,7 @@
 package jedi.game.damage;
 
 import jedi.game.battle.BattleContext;
+import jedi.game.player.IBattleUnit;
 import jedi.game.player.IEntity;
 
 public class PhysicalDamageCalculator implements IDamageCalculator {
@@ -14,7 +15,10 @@ public class PhysicalDamageCalculator implements IDamageCalculator {
         double damage = baseDamage;
         // 1️⃣ 计算攻击者的物理攻击力
         if(damage <=0){
-            damage = attacker.getAttack();
+            if (attacker instanceof IBattleUnit) {
+                IBattleUnit unit = (IBattleUnit) attacker;
+                damage = unit.getAttack();
+            }
         }
         return damage;
     }

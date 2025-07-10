@@ -2,6 +2,8 @@ package jedi.game.skill;
 
 import jedi.game.action.ActionEffect;
 import jedi.game.battle.BattleContext;
+import jedi.game.player.IBattleUnit;
+import jedi.game.player.IEnergyUnit;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 import jedi.game.servercfg.enity.CfgSkill;
@@ -33,10 +35,15 @@ public class EnergyDynamicRestore extends AbstractSkill {
 
     @Override
     public ActionEffect execute(BattleContext ctx, IEntity source, IEntity target, Player defender) {
+        if (!(target instanceof IEnergyUnit)) return null;
+
+        IEnergyUnit energyUnit = (IEnergyUnit) target;
+
+
         if(!Random.isRand(rate)){
             return null;
         }
-        target.recoverEnergyAndReschedule(ctx, target, defender, addEnergy);
+        energyUnit.recoverEnergyAndReschedule(ctx, target, defender, addEnergy);
         ActionEffect actionEffect = getActionEffect(target);
         actionEffect.setValue(addEnergy);
         return actionEffect;

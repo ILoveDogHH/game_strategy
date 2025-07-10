@@ -8,6 +8,7 @@ import jedi.game.enums.ActionType;
 import jedi.game.enums.EventPriority;
 import jedi.game.event.api.AbstractEvent;
 import jedi.game.event.api.IUnitLinkedEvent;
+import jedi.game.player.IEnergyUnit;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 import jedi.game.skill.base.TargetSelector;
@@ -32,16 +33,20 @@ public class HeroEvent extends AbstractEvent implements IUnitLinkedEvent {
 
     @Override
     public void execute(BattleContext context) {
+        if (!(attacker instanceof IEnergyUnit)) return;
+
+        IEnergyUnit energyUnit = (IEnergyUnit) attacker;
+
 
         // 2️⃣ 判断是否可释放技能
-        if (!attacker.canReleaseSkill()) {
+        if (!energyUnit.canReleaseSkill()) {
             // 2.1 当前不能释放技能 → 恢复气力并结束
-            attacker.recoverEnergyAndReschedule(context, attacker, target, attacker.getenergyRecoverPerSecond());
+            energyUnit.recoverEnergyAndReschedule(context, attacker, target, energyUnit.getEnergyRecoverPerSecond());
         } else {
             // 2.2 可以释放技能 → 执行大招
 
             // 清空当前气力
-            attacker.setCurrentEnergy(0);
+            energyUnit.setCurrentEnergy(0);
 
             // 计算伤害
             Action action = DamageCalculator.calculateDamage(context,

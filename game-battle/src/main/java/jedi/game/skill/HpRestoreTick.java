@@ -4,6 +4,7 @@ import jedi.game.action.ActionEffect;
 import jedi.game.battle.BattleContext;
 import jedi.game.enums.EventPriority;
 import jedi.game.event.SkillEvent;
+import jedi.game.player.IBattleUnit;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 import jedi.game.servercfg.enity.CfgSkill;
@@ -41,9 +42,13 @@ public class HpRestoreTick extends AbstractSkill {
 
     @Override
     public ActionEffect executeTick(BattleContext ctx, IEntity source, IEntity target, Player defender) {
+        if (!(target instanceof IBattleUnit)) return null;
+
+        IBattleUnit battleUnit = (IBattleUnit) target;
+
         ActionEffect actionEffect = getActionEffect(target);
         actionEffect.setValue(hpRestore);
-        target.addHp(hpRestore);
+        battleUnit.addHp(hpRestore);
 
         // 注册下一次 Tick 事件
         long nextTick = ctx.getCurrentTime() + getTick();

@@ -2,6 +2,7 @@ package jedi.game.skill;
 
 import jedi.game.action.ActionEffect;
 import jedi.game.battle.BattleContext;
+import jedi.game.player.IBattleUnit;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 import jedi.game.servercfg.enity.CfgSkill;
@@ -33,10 +34,14 @@ public class FreezeStackDynamic extends AbstractSkill {
 
     @Override
     public ActionEffect execute(BattleContext ctx, IEntity source, IEntity target, Player defender) {
+        if (!(target instanceof IBattleUnit)) return null;
+
+        IBattleUnit battleUnit = (IBattleUnit) target;
+
         if(!Random.isRand(rate)){
             return null;
         }
-        target.addFreeze(stack);
+        battleUnit.addFreeze(stack);
         ActionEffect actionEffect = getActionEffect(target);
         actionEffect.setValue(stack);
         return actionEffect;

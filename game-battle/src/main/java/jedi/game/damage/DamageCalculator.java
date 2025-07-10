@@ -7,6 +7,7 @@ import jedi.game.battle.BattleContext;
 import jedi.game.enums.ActionType;
 import jedi.game.enums.DamageType;
 import jedi.game.enums.SkillTriggerType;
+import jedi.game.player.IBattleUnit;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 import jedi.game.skill.base.TargetSelector;
@@ -26,7 +27,14 @@ public class DamageCalculator {
 
         Action action = new Action(ctx.getCurrentTime());
         List<IEntity> defenders = TargetSelector.selectTargets(attacker, target, attacker.getTargeType());
-        for(IEntity defender : defenders){
+        for(IEntity defenderEnity : defenders){
+            //防守方一定是前军，后军才能计算伤害值
+            if (!(defenderEnity instanceof IBattleUnit)){
+                continue;
+            }
+
+            IBattleUnit defender = (IBattleUnit) defenderEnity;
+
             double finalDamage = 0;
             // 计算出不同类型的伤害
             finalDamage = damageType.damageCalculator.calculate(ctx, attacker, defender, baseDamage);
@@ -35,7 +43,8 @@ public class DamageCalculator {
             boolean isDodged = false;
             // 1.暴击判定
             if (attacker != null && damageType.iHitLogicHandler.isCrit(attacker,damageType)) {
-                finalDamage +=  Math.max(0,attacker.getCritMultiplier() -1) * finalDamage;
+                double critMultiplier = damageType.iHitLogicHandler.getCritMultiplier(attacker,damageType);
+                finalDamage +=  Math.max(0,critMultiplier -1) * finalDamage;
                 // 暴击发生时触发
                 List<ActionEffect> skillList0 = attacker.getSkillManager().trigger(SkillTriggerType.ON_CRIT, ctx, attacker, target);
                 actionDetail.addActionEffect(skillList0);
@@ -58,8 +67,6 @@ public class DamageCalculator {
                 actionDetail.addActionEffect(skillList0);
             }
             defender.subHp((int) finalDamage);
-            //测试数据方便展示
-            actionDetail.targetHp = actionDetail.targetHp - (int) finalDamage;
         }
         return action;
     }

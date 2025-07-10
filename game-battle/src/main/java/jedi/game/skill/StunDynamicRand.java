@@ -2,6 +2,7 @@ package jedi.game.skill;
 
 import jedi.game.action.ActionEffect;
 import jedi.game.battle.BattleContext;
+import jedi.game.player.IBattleUnit;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 import jedi.game.servercfg.enity.CfgSkill;
@@ -39,11 +40,15 @@ public class StunDynamicRand extends AbstractSkill {
 
     @Override
     public ActionEffect execute(BattleContext ctx, IEntity source, IEntity target, Player defender) {
+        if (!(target instanceof IBattleUnit)) return null;
+
+        IBattleUnit battleUnit = (IBattleUnit) target;
+
         if(!Random.isRand(rate)){
             return null;
         }
         int stun = Random.randInt(stunDuration1, stunDuration2);
-        target.setStunTs(ctx.getCurrentTime() + stun);
+        battleUnit.setStunTs(ctx.getCurrentTime() + stun);
         ActionEffect actionEffect = getActionEffect(target);
         actionEffect.setValue(stun);
         return actionEffect;

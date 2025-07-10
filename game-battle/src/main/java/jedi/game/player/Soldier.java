@@ -1,9 +1,10 @@
 package jedi.game.player;
 
 import jedi.game.enums.PositionType;
+import jedi.game.enums.TargetType;
 import jedi.game.skill.base.SkillManager;
 // Soldier类表示游戏中的士兵角色，继承自Enity接口
-public class Soldier extends AbstractEntity {
+public class Soldier extends AbstractEntity implements IBattleUnit{
     // 士兵的最大生命值
     public int maxHp;
     // 士兵当前的生命值
@@ -19,9 +20,17 @@ public class Soldier extends AbstractEntity {
     // 士兵的攻击速度（攻击次数/秒）
     public double attackSpeed;
     //被冰冻的层数
-    public int freeze = 0;
+    public int freeze ;
 
-    public int shield = 0;
+    public int shield;
+
+    int projectileTs ;
+
+    int vulnerable;
+
+    int burn;
+
+    long stunTs;
 
 
     protected SkillManager buffManager = new SkillManager();
@@ -43,21 +52,6 @@ public class Soldier extends AbstractEntity {
         this.projectileTs = projectileTs;
     }
 
-    @Override
-    public int getUid() {
-        return uid ;
-    }
-
-    @Override
-    public int getPosition() {
-        return positionType.getValue();
-    }
-
-    // 判断士兵是否存活
-    @Override
-    public boolean isAlive() {
-        return currentHp > 0;
-    }
 
     @Override
     public double getCritRate() {
@@ -105,6 +99,11 @@ public class Soldier extends AbstractEntity {
     }
 
     @Override
+    public TargetType getTargeType() {
+         return TargetType.PRIORITY_FRONT;
+    }
+
+    @Override
     public int getCurrentHp() {
         return currentHp;
     }
@@ -112,6 +111,16 @@ public class Soldier extends AbstractEntity {
     @Override
     public void addHp(int hp) {
         currentHp  = currentHp + hp;
+    }
+
+    @Override
+    public void setStunTs(long stunTs) {
+        this.stunTs += stunTs;
+    }
+
+    @Override
+    public void addVulnerable(int stak) {
+        this.vulnerable += stak;
     }
 
 
@@ -126,8 +135,23 @@ public class Soldier extends AbstractEntity {
     }
 
     @Override
-    public int addFreeze(int freeze) {
-        return freeze + this.freeze;
+    public boolean isAlive() {
+        return currentHp > 0;
+    }
+
+    @Override
+    public long getProjectileTs() {
+        return projectileTs;
+    }
+
+    @Override
+    public void addBurn(int stack) {
+        this.burn += stack;
+    }
+
+    @Override
+    public void addFreeze(int stack) {
+        this.freeze += stack ;
     }
 
     @Override
@@ -142,12 +166,12 @@ public class Soldier extends AbstractEntity {
 
     @Override
     public int getBurn() {
-        return 0;
+        return burn;
     }
 
     @Override
     public int getAttack() {
-        return 0;
+        return attack;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package jedi.game.damage;
 
 import jedi.game.enums.DamageType;
+import jedi.game.player.IBattleUnit;
 import jedi.game.player.IEntity;
 import jedi.game.utils.Random;
 
@@ -12,7 +13,12 @@ public class PhysicalHitLogicHandler implements IHitLogicHandler{
 
     @Override
     public boolean isDodged(IEntity defender, DamageType type) {
-        return Random.isRand(defender.getDodgeRate());
+        if (!(defender instanceof IBattleUnit)){
+            return false;
+        }
+        IBattleUnit defenderc = (IBattleUnit) defender;
+
+        return Random.isRand(defenderc.getDodgeRate());
     }
 
     @Override

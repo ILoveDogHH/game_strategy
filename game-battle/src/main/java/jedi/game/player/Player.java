@@ -39,6 +39,6 @@ public class Player {
     }
 
     public int getCurrentHp(){
-        return general.getCurrentHp() + frontSoldier.getCurrentHp() + backSoldier.getCurrentHp();
+        return frontSoldier.getCurrentHp() + backSoldier.getCurrentHp();
     }
 }

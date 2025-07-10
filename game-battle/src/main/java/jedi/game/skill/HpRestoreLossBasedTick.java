@@ -2,6 +2,7 @@ package jedi.game.skill;
 
 import jedi.game.action.ActionEffect;
 import jedi.game.battle.BattleContext;
+import jedi.game.player.IBattleUnit;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 import jedi.game.servercfg.enity.CfgSkill;
@@ -35,15 +36,19 @@ public class HpRestoreLossBasedTick extends AbstractSkill {
 
     @Override
     public ActionEffect executeTick(BattleContext ctx, IEntity source, IEntity target, Player defender) {
+        if (!(target instanceof IBattleUnit)) return null;
 
-        int lostHp = target.getLostHp(); // 计算损失的生命值
+        IBattleUnit battleUnit = (IBattleUnit) target;
+
+
+        int lostHp = battleUnit.getLostHp(); // 计算损失的生命值
 
         int addHp = (int) (lostHp * percent ); // 根据百分比计算恢复的生命值
         if(addHp <= 0) {
             return null; // 如果计算结果小于等于0，则不执行恢复
         }
 
-        target.addHp(addHp);
+        battleUnit.addHp(addHp);
         ActionEffect actionEffect = getActionEffect(target);
         actionEffect.setValue(addHp); // 设置恢复的生命值
         return actionEffect; // 返回执行效果

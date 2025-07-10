@@ -1,6 +1,7 @@
 package jedi.game.skill.base;
 
 import jedi.game.enums.TargetType;
+import jedi.game.player.IBattleUnit;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 
@@ -23,22 +24,30 @@ public class TargetSelector {
                 return Collections.emptyList();
 
             case ALL:
-                return enemy.getAllSoldiers().stream()
-                        .filter(IEntity::isAlive)
+                return enemy.getAllEnity().stream()
+                        .filter(e -> e instanceof IBattleUnit)
+                        .map(e -> (IBattleUnit) e)
+                        .filter(IBattleUnit::isAlive)
+                        .map(e -> (IEntity) e)
                         .collect(Collectors.toList());
 
             case RANDOM:
-                List<IEntity> alive = enemy.getAllSoldiers().stream()
-                        .filter(IEntity::isAlive)
+                List<IBattleUnit> aliveUnits = enemy.getAllEnity().stream()
+                        .filter(e -> e instanceof IBattleUnit)
+                        .map(e -> (IBattleUnit) e)
+                        .filter(IBattleUnit::isAlive)
                         .collect(Collectors.toList());
-                if (alive.isEmpty()) return Collections.emptyList();
-                return Collections.singletonList(alive.get(new Random().nextInt(alive.size())));
+
+                if (aliveUnits.isEmpty()) return Collections.emptyList();
+                return Collections.singletonList(aliveUnits.get(new Random().nextInt(aliveUnits.size())));
 
             case LOWEST_HP:
-                return enemy.getAllSoldiers().stream()
-                        .filter(IEntity::isAlive)
-                        .min(Comparator.comparingInt(s -> s.getCurrentHp()))
-                        .map(Collections::singletonList)
+                return enemy.getAllEnity().stream()
+                        .filter(e -> e instanceof IBattleUnit)
+                        .map(e -> (IBattleUnit) e)
+                        .filter(IBattleUnit::isAlive)
+                        .min(Comparator.comparingInt(IBattleUnit::getCurrentHp))
+                        .map(e -> Collections.singletonList((IEntity) e))
                         .orElse(Collections.emptyList());
 
             case PRIORITY_FRONT:

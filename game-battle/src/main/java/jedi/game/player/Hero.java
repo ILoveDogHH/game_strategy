@@ -6,12 +6,14 @@ import jedi.game.battle.BattleContext;
 import jedi.game.enums.ActionType;
 import jedi.game.enums.EventPriority;
 import jedi.game.enums.PositionType;
+import jedi.game.enums.TargetType;
 import jedi.game.event.HeroEvent;
 
-public class Hero extends AbstractEntity {
+public class Hero extends AbstractEntity implements IEnergyUnit {
     public int maxEnergy;
     public int currentEnergy;
     public int energyRecoverPerSecond;
+    public int projectile_ts;
 
 
     public Hero(PositionType positionType, String name, int maxEnergy, int energyRecoverPerSecond, Player owner, int projectileTs) {
@@ -22,88 +24,43 @@ public class Hero extends AbstractEntity {
         this.energyRecoverPerSecond = energyRecoverPerSecond;
         this.owner = owner;
         this.currentEnergy = 0;
-        this.projectileTs = projectileTs;
+        this.projectile_ts = projectileTs;
     }
 
 
     @Override
-    public boolean isAlive() { return true; } // 武将无HP
-
-
-
-    @Override
-    public double getDodgeRate() {
-        return 0;
+    public int getCurrentEnergy() {
+        return currentEnergy;
     }
 
     @Override
-    public void receiveDamage(int damage) { /* 不受伤 */ }
-
-
-    @Override
-    public int getCurrentHp() {
-        return 0;
+    public int getMaxEnergy() {
+        return maxEnergy;
     }
 
     @Override
-    public void addHp(int hp) {
-
-    }
-
-    @Override
-    public double getAttackSpeed() {
-        return 0;
-    }
-
-    @Override
-    public int addFreeze(int freeze) {
-        return 0;
-    }
-
-    @Override
-    public int getMaxHp() {
-        return 0;
-    }
-
-    @Override
-    public void addShield(int shield) {
-
-    }
-
-    @Override
-    public int getBurn() {
-        return 0;
-    }
-
-    @Override
-    public int getAttack() {
-        return 0;
-    }
-
-    @Override
-    public int getLostHp() {
-        return 0;
-    }
-
-
-    @Override
-    public int getenergyRecoverPerSecond() {
+    public int getEnergyRecoverPerSecond() {
         return energyRecoverPerSecond;
     }
 
     @Override
-    public void heal(int amount) {
-        // 武将不需要治疗
+    public boolean canReleaseSkill() {
+        return false;
     }
 
     @Override
-    public boolean canReleaseSkill(){
-        return currentEnergy >= maxEnergy;
+    public void setCurrentEnergy(int val) {
+
     }
 
     @Override
-    public void setCurrentEnergy(int currentEnergy){
-        this.currentEnergy = Math.max(0, currentEnergy);
+    public TargetType getTargeType() {
+        return TargetType.PRIORITY_FRONT;
+    }
+
+    @Override
+    public double getCritRate() {
+        return 0;
     }
 
     @Override

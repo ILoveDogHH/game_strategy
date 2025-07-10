@@ -4,6 +4,7 @@ import jedi.game.action.ActionEffect;
 import jedi.game.battle.BattleContext;
 import jedi.game.enums.EventPriority;
 import jedi.game.event.SkillEvent;
+import jedi.game.player.IBattleUnit;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 import jedi.game.servercfg.enity.CfgSkill;
@@ -38,8 +39,12 @@ public class ShieldRandTick extends AbstractSkill {
 
     @Override
     public ActionEffect execute(BattleContext ctx, IEntity source, IEntity target, Player defender) {
+        if (!(target instanceof IBattleUnit)) return null;
+
+        IBattleUnit battleUnit = (IBattleUnit) target;
+
         ActionEffect actionEffect = getActionEffect(target);
-        target.addShield(stack0);
+        battleUnit.addShield(stack0);
         actionEffect.setValue(stack0);
 
         setExpireTime(ctx.getCurrentTime() + expireTime); //设置buff的过期时间
@@ -52,8 +57,12 @@ public class ShieldRandTick extends AbstractSkill {
 
     @Override
     public ActionEffect executeTick(BattleContext ctx, IEntity source, IEntity target, Player defender) {
+        if (!(target instanceof IBattleUnit)) return null;
+
+        IBattleUnit battleUnit = (IBattleUnit) target;
+
         ActionEffect actionEffect = getActionEffect(target);
-        target.addShield(stack);
+        battleUnit.addShield(stack);
         actionEffect.setValue(stack);
         return actionEffect;
     }

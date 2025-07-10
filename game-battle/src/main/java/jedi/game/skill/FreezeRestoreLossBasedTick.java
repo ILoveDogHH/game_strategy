@@ -2,6 +2,7 @@ package jedi.game.skill;
 
 import jedi.game.action.ActionEffect;
 import jedi.game.battle.BattleContext;
+import jedi.game.player.IBattleUnit;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 import jedi.game.servercfg.enity.CfgSkill;
@@ -40,11 +41,15 @@ public class FreezeRestoreLossBasedTick extends AbstractSkill {
 
     @Override
     public ActionEffect executeTick(BattleContext ctx, IEntity source, IEntity target, Player defender) {
-        int lostHp = target.getLostHp(); // 计算损失的生命值
+        if (!(target instanceof IBattleUnit)) return null;
+
+        IBattleUnit battleUnit = (IBattleUnit) target;
+
+        int lostHp = battleUnit.getLostHp(); // 计算损失的生命值
 
         int addStack = (int) Math.max(lostHp * percent, minStack); // 计算添加的冰冻层数，至少为minStack层
 
-        target.addFreeze(addStack);
+        battleUnit.addFreeze(addStack);
         ActionEffect actionEffect = getActionEffect(target);
         actionEffect.setValue(addStack);
         return actionEffect;

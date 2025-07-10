@@ -12,10 +12,7 @@ public abstract class AbstractEntity implements IEntity {
     protected PositionType positionType;
     protected String name;
     protected Player owner;
-    protected int projectileTs;
-    protected long stun_ts;
-    protected int vulnerable;
-    protected int burn;
+
 
     protected SkillManager buffManager = new SkillManager();
 
@@ -53,43 +50,4 @@ public abstract class AbstractEntity implements IEntity {
 
 
 
-    @Override
-    public int getProjectileTs() {
-        return projectileTs;
-    }
-
-
-    @Override
-    public void setProjectileTs(int projectileTs) {
-        this.projectileTs = projectileTs;
-    }
-
-
-
-    @Override
-    public void heal(int amount) {}
-
-    @Override
-    public void setCurrentEnergy(int currentEnergy) {}
-
-    @Override
-    public void setOwner(Player owner) {
-        this.owner = owner;
-    }
-
-
-    @Override
-    public void setStunTs(long stunTs) {
-        this.stun_ts = stunTs;
-    }
-
-    @Override
-    public void addVulnerable(long vulnerable) {
-        this.vulnerable += vulnerable;
-    }
-
-    @Override
-    public void addBurn(int burn) {
-        this.burn += burn;
-    }
 }

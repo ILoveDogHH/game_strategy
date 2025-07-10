@@ -4,6 +4,7 @@ import jedi.game.action.ActionEffect;
 import jedi.game.battle.BattleContext;
 import jedi.game.enums.EventPriority;
 import jedi.game.event.SkillEvent;
+import jedi.game.player.IEnergyUnit;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 import jedi.game.servercfg.enity.CfgSkill;
@@ -37,7 +38,11 @@ public class EnergyRecoverTick extends AbstractSkill {
 
     @Override
     public ActionEffect executeTick(BattleContext ctx, IEntity source, IEntity target, Player defender) {
-        target.recoverEnergyAndReschedule(ctx, target, defender, energyRecover);
+        if (!(target instanceof IEnergyUnit)) return null;
+
+        IEnergyUnit energyUnit = (IEnergyUnit) target;
+
+        energyUnit.recoverEnergyAndReschedule(ctx, target, defender, energyRecover);
         ActionEffect actionEffect = getActionEffect(target);
         actionEffect.setValue(energyRecover);
         return actionEffect;

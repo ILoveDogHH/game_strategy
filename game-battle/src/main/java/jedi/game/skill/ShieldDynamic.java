@@ -4,6 +4,7 @@ import jedi.game.action.ActionEffect;
 import jedi.game.battle.BattleContext;
 import jedi.game.enums.SkillTriggerType;
 import jedi.game.enums.TargetType;
+import jedi.game.player.IBattleUnit;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
 import jedi.game.servercfg.enity.CfgSkill;
@@ -39,11 +40,15 @@ public class ShieldDynamic extends AbstractSkill {
 
     @Override
     public ActionEffect execute(BattleContext ctx, IEntity source, IEntity target, Player defender) {
+        if (!(target instanceof IBattleUnit)) return null;
+
+        IBattleUnit battleUnit = (IBattleUnit) target;
+
         if(!Random.isRand(rate)){
             return null;
         }
         ActionEffect actionEffect = getActionEffect(target);
-        target.addShield(stack);
+        battleUnit.addShield(stack);
         actionEffect.setValue(stack);
         return actionEffect;
     }
