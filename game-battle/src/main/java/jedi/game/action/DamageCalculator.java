@@ -45,6 +45,11 @@ public class DamageCalculator {
             actionDetail.damage.isCrit = isCrit;
             actionDetail.damage.damage = (int) finalDamage;
             action.addActionDetail(actionDetail);
+            if((int)finalDamage >= defender.getCurrentHp()){
+                // 首次即将死亡时触发
+                List<ActionEffect> skillList0 = attacker.getSkillManager().trigger(SkillTriggerType.ON_FIRST_NEAR_DEATH, ctx, attacker, target);
+                actionDetail.addActionEffect(skillList0);
+            }
             defender.subHp((int) finalDamage);
             //测试数据方便展示
             actionDetail.targetHp = actionDetail.targetHp - (int) finalDamage;
