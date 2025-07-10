@@ -23,10 +23,11 @@ public class DamageCalculator {
      * @return 实际造成的伤害
      */
     public static Action calculateDamage(BattleContext ctx, IEntity attacker, Player target, int baseDamage, DamageType damageType, ActionType actionType) {
-        double finalDamage = 0;
+
         Action action = new Action(ctx.getCurrentTime());
         List<IEntity> defenders = TargetSelector.selectTargets(attacker, target, attacker.getTargeType());
         for(IEntity defender : defenders){
+            double finalDamage = 0;
             // 计算出不同类型的伤害
             finalDamage = damageType.damageCalculator.calculate(ctx, attacker, defender, baseDamage);
             ActionDetail actionDetail = new ActionDetail( attacker, defender, actionType);
