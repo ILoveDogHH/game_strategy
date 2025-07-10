@@ -13,8 +13,9 @@ public class PhysicalDamageCalculator implements IDamageCalculator {
     public double calculate(BattleContext ctx, IEntity attacker, IEntity defender, int baseDamage) {
         double damage = baseDamage;
         // 1️⃣ 计算攻击者的物理攻击力
-
-
-        return Math.max(1, 100);  // 保底伤害为1
+        if(damage <=0){
+            damage = attacker.getAttack();
+        }
+        return damage;
     }
 }

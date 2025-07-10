@@ -15,7 +15,6 @@ public class StrategyDamageCalculator implements IDamageCalculator {
     @Override
     public double calculate(BattleContext ctx, IEntity attacker, IEntity defender, int baseDamage) {
         double damage = baseDamage;
-
-        return Math.max(1, damage);
+        return damage;
     }
 }

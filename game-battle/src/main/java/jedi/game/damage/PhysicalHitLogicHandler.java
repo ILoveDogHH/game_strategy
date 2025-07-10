@@ -12,7 +12,7 @@ public class PhysicalHitLogicHandler implements IHitLogicHandler{
 
     @Override
     public boolean isDodged(IEntity defender, DamageType type) {
-        return Random.random(defender.getDodgeRate());
+        return Random.isRand(defender.getDodgeRate());
     }
 
     @Override

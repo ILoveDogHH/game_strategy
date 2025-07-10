@@ -6,8 +6,13 @@ import jedi.game.player.IEntity;
 public class BurnDamageCalculator implements IDamageCalculator{
 
     @Override
-    public double calculate(BattleContext ctx, IEntity attacker, IEntity defender, int layerCount) {
-        return Math.max(1, (int) 100);
+    public double calculate(BattleContext ctx, IEntity attacker, IEntity defender, int baseDamage) {
+        double damage = baseDamage;
+        // 1️⃣ 计算攻击者的燃烧伤害
+        if(damage <=0){
+            damage = attacker.getBurn();
+        }
+        return damage;
     }
 
 

@@ -16,7 +16,7 @@ public class FateDamageCalculator implements IDamageCalculator {
     @Override
     public double calculate(BattleContext ctx, IEntity attacker, IEntity defender, int baseDamage) {
         // 直接返回，不参与任何修正
-        return Math.max(1, 100);
+        return baseDamage;
     }
 
 }
