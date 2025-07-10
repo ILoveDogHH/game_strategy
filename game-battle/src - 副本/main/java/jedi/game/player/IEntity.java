@@ -12,7 +12,7 @@ public interface IEntity {
     int getUid();
     int getPosition();
     boolean isAlive();
-    double getDodgeRate();
+    int getDodgeRate();
     void receiveDamage(int damage);
     String getName();
     void heal(int amount);
@@ -30,8 +30,6 @@ public interface IEntity {
     void setStunTs(long stunTs);
     void addVulnerable(long vulnerable);
     void addBurn(int burn);
-    int getBurn();
-    int getAttack();
 
     int getLostHp();
 

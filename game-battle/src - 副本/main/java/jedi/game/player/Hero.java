@@ -32,7 +32,7 @@ public class Hero extends AbstractEntity {
 
 
     @Override
-    public double getDodgeRate() {
+    public int getDodgeRate() {
         return 0;
     }
 
@@ -68,16 +68,6 @@ public class Hero extends AbstractEntity {
     @Override
     public void addShield(int shield) {
 
-    }
-
-    @Override
-    public int getBurn() {
-        return 0;
-    }
-
-    @Override
-    public int getAttack() {
-        return 0;
     }
 
     @Override

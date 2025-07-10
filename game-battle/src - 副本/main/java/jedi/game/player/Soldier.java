@@ -70,8 +70,8 @@ public class Soldier extends AbstractEntity {
     }
 
     @Override
-    public double getDodgeRate() {
-        return dodgeRate;
+    public int getDodgeRate() {
+        return 0;
     }
 
     // 接收伤害并更新当前生命值
@@ -138,16 +138,6 @@ public class Soldier extends AbstractEntity {
     @Override
     public void addShield(int shield) {
         this.shield = Math.max(0, this.shield + shield); // 确保盾牌值不会为负
-    }
-
-    @Override
-    public int getBurn() {
-        return 0;
-    }
-
-    @Override
-    public int getAttack() {
-        return 0;
     }
 
     @Override

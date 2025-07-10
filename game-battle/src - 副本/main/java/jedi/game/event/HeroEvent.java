@@ -1,8 +1,8 @@
 package jedi.game.event;
 
 import jedi.game.action.Action;
-import jedi.game.damage.DamageCalculator;
-import jedi.game.enums.DamageType;
+import jedi.game.action.DamageCalculator;
+import jedi.game.action.DamageType;
 import jedi.game.battle.BattleContext;
 import jedi.game.enums.ActionType;
 import jedi.game.enums.EventPriority;
@@ -10,9 +10,6 @@ import jedi.game.event.api.AbstractEvent;
 import jedi.game.event.api.IUnitLinkedEvent;
 import jedi.game.player.IEntity;
 import jedi.game.player.Player;
-import jedi.game.skill.base.TargetSelector;
-
-import java.util.List;
 
 /**
  * 武将的气力恢复
@@ -43,9 +40,12 @@ public class HeroEvent extends AbstractEvent implements IUnitLinkedEvent {
             // 清空当前气力
             attacker.setCurrentEnergy(0);
 
+            // 固定计策伤害（可改为配置）
+            int skillDamage = 50;
+
             // 计算伤害
             Action action = DamageCalculator.calculateDamage(context,
-                    attacker, target, 0, DamageType.STRATEGY, ActionType.SKILL);
+                    attacker, target, skillDamage, DamageType.STRATEGY, ActionType.SKILL);
             context.addAction(action);
 
         }
