@@ -11,7 +11,7 @@ import jedi.game.player.IEntity;
  * - 不受加速修正影响
  * - 直接返回固定伤害值（如技能传入）
  */
-public class TrueDamageCalculator implements IDamageCalculator {
+public class FateDamageCalculator implements IDamageCalculator {
 
     @Override
     public double calculate(BattleContext ctx, IEntity attacker, IEntity defender, int baseDamage) {

@@ -43,14 +43,6 @@ public class HeroEvent extends AbstractEvent implements IUnitLinkedEvent {
             // 清空当前气力
             attacker.setCurrentEnergy(0);
 
-            List<IEntity> targets = TargetSelector.selectTargets(attacker, target, attacker.getTargeType());
-
-
-
-
-
-
-
             // 计算伤害
             Action action = DamageCalculator.calculateDamage(context,
                     attacker, target, 0, DamageType.STRATEGY, ActionType.SKILL);

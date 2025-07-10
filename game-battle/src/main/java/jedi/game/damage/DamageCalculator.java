@@ -23,18 +23,17 @@ public class DamageCalculator {
      * @return 实际造成的伤害
      */
     public static Action calculateDamage(BattleContext ctx, IEntity attacker, Player target, int baseDamage, DamageType damageType, ActionType actionType) {
-
         double finalDamage = 0;
         Action action = new Action(ctx.getCurrentTime());
         List<IEntity> defenders = TargetSelector.selectTargets(attacker, target, attacker.getTargeType());
         for(IEntity defender : defenders){
             // 计算出不同类型的伤害
-            finalDamage = damageType.damageCalculator.calculate(ctx, attacker, defender, 0);
+            finalDamage = damageType.damageCalculator.calculate(ctx, attacker, defender, baseDamage);
             ActionDetail actionDetail = new ActionDetail( attacker, defender, actionType);
             boolean isCrit = false;
             boolean isDodged = false;
             // 1.暴击判定
-            if (attacker != null && damageType.canCrit() && Math.random() < attacker.getCritRate()) {
+            if (attacker != null && damageType.iHitLogicHandler.isCrit(attacker,damageType)) {
                 finalDamage +=  Math.max(0,attacker.getCritMultiplier() -1) * finalDamage;
                 // 暴击发生时触发
                 List<ActionEffect> skillList0 = attacker.getSkillManager().trigger(SkillTriggerType.ON_CRIT, ctx, attacker, target);
@@ -44,7 +43,7 @@ public class DamageCalculator {
             // 4. 战斗加速
             finalDamage *= ctx.getSpeedCoefficient();
             // 2. 闪避判定
-            if (damageType.canDodge() && Math.random() < defender.getDodgeRate()) {
+            if (damageType.iHitLogicHandler.isDodged(defender, damageType)) {
                 isDodged = true;
                 finalDamage = 0;
             }

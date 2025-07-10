@@ -5,13 +5,13 @@ import jedi.game.damage.*;
 // 枚举类，表示伤害类型及其特性
 public enum DamageType {
     // 物理伤害，可暴击，可闪避
-    PHYSICAL(true, true, new PhysicalDamageCalculator()),
+    PHYSICAL(true, true, new PhysicalDamageCalculator(), new PhysicalHitLogicHandler()),
     // 大招伤害，不可暴击，不可闪避
-    STRATEGY(false, false, new StrategyDamageCalculator()),
+    STRATEGY(false, false, new StrategyDamageCalculator(), new StrategyHitLogicHandler()),
     // 燃烧伤害，不可暴击，不可闪避
-    BURN(false, false, new BurnDamageCalculator()),
+    BURN(false, false, new BurnDamageCalculator(), new BurnHitLogicHandler()),
     // 真实伤害，不可暴击，不可闪避
-    FATE(false, false, new TrueDamageCalculator()),
+    FATE(false, false, new FateDamageCalculator(), new FateHitLogicHandler()),
 
     ;
 
@@ -22,11 +22,14 @@ public enum DamageType {
 
     public final IDamageCalculator damageCalculator;
 
+    public final IHitLogicHandler iHitLogicHandler;
+
     // 构造方法，用于初始化伤害类型的特性
-    DamageType(boolean canCrit, boolean canDodge, IDamageCalculator damageCalculator) {
+    DamageType(boolean canCrit, boolean canDodge, IDamageCalculator damageCalculator, IHitLogicHandler iHitLogicHandler) {
         this.canCrit = canCrit;
         this.canDodge = canDodge;
         this.damageCalculator = damageCalculator;
+        this.iHitLogicHandler = iHitLogicHandler;
     }
 
 
