@@ -12,7 +12,7 @@ public interface IEntity {
     int getUid();
     int getPosition();
     boolean isAlive();
-    int getDodgeRate();
+    double getDodgeRate();
     void receiveDamage(int damage);
     String getName();
     void heal(int amount);

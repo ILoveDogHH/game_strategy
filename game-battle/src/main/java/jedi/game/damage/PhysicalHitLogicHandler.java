@@ -2,16 +2,17 @@ package jedi.game.damage;
 
 import jedi.game.enums.DamageType;
 import jedi.game.player.IEntity;
+import jedi.game.utils.Random;
 
 public class PhysicalHitLogicHandler implements IHitLogicHandler{
     @Override
     public boolean isCrit(IEntity attacker, DamageType type) {
-        return false;
+        return Random.isRand(attacker.getCritRate());
     }
 
     @Override
     public boolean isDodged(IEntity defender, DamageType type) {
-        return false;
+        return Random.random(defender.getDodgeRate());
     }
 
     @Override

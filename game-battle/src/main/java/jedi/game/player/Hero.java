@@ -32,7 +32,7 @@ public class Hero extends AbstractEntity {
 
 
     @Override
-    public int getDodgeRate() {
+    public double getDodgeRate() {
         return 0;
     }
 

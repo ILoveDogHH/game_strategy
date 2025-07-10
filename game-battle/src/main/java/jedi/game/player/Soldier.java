@@ -70,8 +70,8 @@ public class Soldier extends AbstractEntity {
     }
 
     @Override
-    public int getDodgeRate() {
-        return 0;
+    public double getDodgeRate() {
+        return dodgeRate;
     }
 
     // 接收伤害并更新当前生命值
