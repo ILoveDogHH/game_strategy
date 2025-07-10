@@ -20,7 +20,7 @@ public class cfgGenerator {
                     builder
                             .addInclude("cfg_skill")
                             .addInclude("cfg_skill_effect")// 替换成你的表
-                            .addInclude("cfg_skill_projectile")
+                            .addInclude("cfg_soldier")
                             .entityBuilder()
                             .enableLombok()
                             .enableFileOverride()

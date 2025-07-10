@@ -13,7 +13,7 @@ import lombok.Setter;
  * </p>
  *
  * @author zhanglefeng
- * @since 2025-07-09
+ * @since 2025-07-10
  */
 @Getter
 @Setter
@@ -66,11 +66,6 @@ public class CfgSkill implements Serializable {
     private Integer effect;
 
     /**
-     * 技能定期时间  >0 可定期
-     */
-    private Integer interval;
-
-    /**
      * 技能飞行时间   0 瞬发
      */
     private Integer projectile_ts;
@@ -79,4 +74,9 @@ public class CfgSkill implements Serializable {
      * 技能飞行道具
      */
     private Integer projectile;
+
+    /**
+     * 生效次数
+     */
+    private Integer activation_count;
 }
