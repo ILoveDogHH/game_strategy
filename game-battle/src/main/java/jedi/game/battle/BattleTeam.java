@@ -33,7 +33,7 @@ public class BattleTeam {
     public double getSpeedCoefficient() { return speedCoefficient; }
     public void scheduleEvent(IEvent event) { eventQueue.add(event); }
 
-    public List<Action> run() {
+    public List<Action> startbattle() {
         System.out.println("战斗开始！");
         scheduleEvent(new SoliderEvent(0, EventPriority.ATTACK, playerA.frontSoldier, playerB));
         scheduleEvent(new SoliderEvent(0, EventPriority.ATTACK, playerB.frontSoldier, playerA));

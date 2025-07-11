@@ -28,13 +28,7 @@ public class Player {
     }
 
 
-    // 构造方法，用于初始化玩家的属性
-    public Player(String name, Soldier frontSoldier, Soldier backSoldier, Hero general) {
-        this.name = name;
-        this.frontSoldier = frontSoldier;
-        this.backSoldier = backSoldier;
-        this.general = general;
-    }
+
 
     // 获取玩家的所有士兵（前排和后排）
     public List<IEntity> getAllSoldiers() {
