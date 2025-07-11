@@ -33,24 +33,22 @@ public class BattleTeam {
     public double getSpeedCoefficient() { return speedCoefficient; }
     public void scheduleEvent(IEvent event) { eventQueue.add(event); }
 
-    public List<String> run() {
+    public List<Action> run() {
         System.out.println("战斗开始！");
         scheduleEvent(new SoliderEvent(0, EventPriority.ATTACK, playerA.frontSoldier, playerB));
         scheduleEvent(new SoliderEvent(0, EventPriority.ATTACK, playerB.frontSoldier, playerA));
-//        // 初始化普攻事件
+        // 初始化普攻事件
         scheduleEvent(new SoliderEvent(0, EventPriority.ATTACK, playerA.backSoldier, playerB));
         scheduleEvent(new SoliderEvent(0, EventPriority.ATTACK, playerB.backSoldier, playerA));
 
 
-//        // 初始化武将气力恢复事件
+       // 初始化武将气力恢复事件
         scheduleEvent(new HeroEvent(1000, playerA.general, playerB));
         scheduleEvent(new HeroEvent(1000, playerB.general, playerA));
 
         // triggerInitialTickableSkills(playerA, playerB);
 
-
         BattleContext context = new BattleContext(this);
-
         while (!isBattleEnd() && currentTime <= maxDuration) {
             if (eventQueue.isEmpty()) break;
             IEvent event = eventQueue.poll();
@@ -62,26 +60,7 @@ public class BattleTeam {
 
             event.execute(context);
         }
-
-        for(Action action : context.getActionList()){
-            System.out.println(action.toVisualString());
-        }
-        List<String> result = context.getActionList().stream().map(Action::toVisualString).collect(Collectors.toList());
-        if (playerA.isAllDead() && playerB.isAllDead()) {
-            result.add("战斗结束，双方同归于尽，平局！");
-            System.out.println("战斗结束，双方同归于尽，平局！");
-        } else if (playerA.isAllDead()) {
-            result.add("战斗结束，" + playerB.name + " 获胜！");
-            System.out.println("战斗结束，" + playerB.name + " 获胜！");
-        } else if (playerB.isAllDead()) {
-            result.add("战斗结束，" + playerA.name + " 获胜！");
-            System.out.println("战斗结束，" + playerA.name + " 获胜！");
-        } else {
-            result.add("战斗结束，达到时间上限，按规则判定胜负（未实现）");
-            System.out.println("战斗结束，达到时间上限，按规则判定胜负（未实现）");
-        }
-
-        return result;
+        return context.getActionList();
     }
 
     private boolean isBattleEnd() {
