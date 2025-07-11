@@ -1,17 +1,12 @@
-package jedi.game;
+package jedi.game.controller;
 
 import jedi.game.battle.BattleTeam;
 import jedi.game.enums.PositionType;
-import jedi.game.exception.DaoException;
-import jedi.game.fatcory.SkillFatcory;
 import jedi.game.player.Hero;
 import jedi.game.player.Player;
 import jedi.game.player.Soldier;
-import jedi.game.servercfg.dao.CfgSkillDao;
-import jedi.game.servercfg.enity.CfgSkill;
 import jedi.game.skill.base.ISkill;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BattleSystemDemo {
@@ -19,5 +14,9 @@ public class BattleSystemDemo {
 
 
 
+    public static void main(String[] args) {
+
+
+    }
 
 }

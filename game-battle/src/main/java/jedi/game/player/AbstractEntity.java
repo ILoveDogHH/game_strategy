@@ -15,11 +15,6 @@ public abstract class AbstractEntity implements IEntity {
 
     protected SkillManager buffManager = new SkillManager();
 
-    public AbstractEntity(PositionType positionType, String name) {
-        this.positionType = positionType;
-        this.name = name;
-    }
-
 
     @Override
     public int getUid() {

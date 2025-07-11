@@ -38,4 +38,14 @@ public enum PositionType {
     public int getValue() {
         return value;
     }
+
+
+    public static PositionType fromValue(int value) {
+        for (PositionType type : PositionType.values()) {
+            if (type.value == value) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException("No TargetType with value " + value);
+    }
 }

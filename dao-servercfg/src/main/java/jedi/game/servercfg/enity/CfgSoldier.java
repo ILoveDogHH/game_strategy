@@ -11,7 +11,7 @@ import lombok.Setter;
  * </p>
  *
  * @author zhanglefeng
- * @since 2025-07-10
+ * @since 2025-07-11
  */
 @Getter
 @Setter
@@ -26,9 +26,29 @@ public class CfgSoldier implements Serializable {
     private Integer soldier_id;
 
     /**
+     * 兵种类型
+     */
+    private Integer soldier_type;
+
+    /**
      * 0=前军，1=后军
      */
-    private Byte type;
+    private Integer position_type;
+
+    /**
+     * 士兵名字
+     */
+    private String soldier_name;
+
+    /**
+     * 飞行道具飞行时间
+     */
+    private Integer projectile_ts;
+
+    /**
+     * 飞行道具id
+     */
+    private Integer projectile_id;
 
     /**
      * 生命值上限
@@ -48,7 +68,7 @@ public class CfgSoldier implements Serializable {
     /**
      * 暴击率（点）
      */
-    private Integer crit_rate;
+    private Double crit_rate;
 
     /**
      * 暴击失效率（0~1）
@@ -63,7 +83,7 @@ public class CfgSoldier implements Serializable {
     /**
      * 闪避率（点）
      */
-    private Integer dodge_rate;
+    private Double dodge_rate;
 
     /**
      * 闪避失效率（0~1）
@@ -103,30 +123,30 @@ public class CfgSoldier implements Serializable {
     /**
      * 计策暴击率（点）
      */
-    private Integer magic_crit_rate;
+    private Double magic_crit_rate;
 
     /**
      * 燃烧暴击率（点）
      */
-    private Integer burn_crit_rate;
+    private Double burn_crit_rate;
 
     /**
      * 天命暴击率（点）
      */
-    private Integer destiny_crit_rate;
+    private Double destiny_crit_rate;
 
     /**
      * 计策闪避率（点）
      */
-    private Integer magic_dodge_rate;
+    private Double magic_dodge_rate;
 
     /**
      * 燃烧闪避率（点）
      */
-    private Integer burn_dodge_rate;
+    private Double burn_dodge_rate;
 
     /**
      * 天命闪避率（点）
      */
-    private Integer destiny_dodge_rate;
+    private Double destiny_dodge_rate;
 }

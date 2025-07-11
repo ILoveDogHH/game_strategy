@@ -59,4 +59,14 @@ public enum EventPriority {
         return value;
     }
 
+
+
+    public static EventPriority fromValue(int value) {
+        for (EventPriority type : EventPriority.values()) {
+            if (type.value == value) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException("No TargetType with value " + value);
+    }
 }

@@ -8,6 +8,8 @@ import jedi.game.enums.EventPriority;
 import jedi.game.enums.PositionType;
 import jedi.game.enums.TargetType;
 import jedi.game.event.HeroEvent;
+import jedi.game.servercfg.enity.CfgHero;
+import jedi.game.servercfg.enity.CfgSoldier;
 
 public class Hero extends AbstractEntity implements IEnergyUnit {
     public int maxEnergy;
@@ -16,14 +18,12 @@ public class Hero extends AbstractEntity implements IEnergyUnit {
     public int projectile_ts;
 
 
-    public Hero(PositionType positionType, String name, int maxEnergy, int energyRecoverPerSecond, int projectileTs) {
-        super(positionType, name);
-        this.positionType = positionType;
-        this.name = name;
-        this.maxEnergy = maxEnergy;
-        this.energyRecoverPerSecond = energyRecoverPerSecond;
-        this.currentEnergy = 0;
-        this.projectile_ts = projectileTs;
+    public Hero(int uid, CfgHero cfg){
+        this.uid = uid;
+        this.positionType = PositionType.HERO;
+        this.name = cfg.getH_name();
+        this.maxEnergy = cfg.getEnergy_max();
+        this.energyRecoverPerSecond = cfg.getEnergy_recovery();
     }
 
 

@@ -2,6 +2,7 @@ package jedi.game.player;
 
 import jedi.game.enums.PositionType;
 import jedi.game.enums.TargetType;
+import jedi.game.servercfg.enity.CfgSoldier;
 import jedi.game.skill.base.SkillManager;
 // Soldier类表示游戏中的士兵角色，继承自Enity接口
 public class Soldier extends AbstractEntity implements IBattleUnit{
@@ -35,21 +36,25 @@ public class Soldier extends AbstractEntity implements IBattleUnit{
 
     protected SkillManager buffManager = new SkillManager();
 
-    // 构造方法，用于初始化士兵的属性
-    public Soldier(PositionType positionType, String name, int maxHp, int attack, double critRate, double critMultiplier,
-                   double dodgeRate, double attackSpeed, int projectileTs) {
-        super(positionType, name);
-        this.positionType = positionType;
-        this.name = name;
-        this.maxHp = maxHp;
-        this.currentHp = maxHp; // 初始生命值等于最大生命值
-        this.attack = attack;
-        this.critRate = critRate;
-        this.critMultiplier = critMultiplier;
-        this.dodgeRate = dodgeRate;
-        this.attackSpeed = attackSpeed;
-        this.projectileTs = projectileTs;
+
+
+    public Soldier(int uid, CfgSoldier cfg){
+        this.uid = uid;
+        this.positionType = PositionType.fromValue(cfg.getPosition_type());
+        this.name = cfg.getSoldier_name();
+        this.maxHp = cfg.getHp_max();
+        this.currentHp = cfg.getHp_max(); // 初始生命值等于最大生命值
+        this.attack = cfg.getAttack();
+        this.critRate = cfg.getCrit_rate();
+        this.critMultiplier = cfg.getCrit_damage_bonus();
+        this.dodgeRate = cfg.getDodge_rate();
+        this.attackSpeed = cfg.getAttack_speed();
+        this.projectileTs = cfg.getProjectile_ts();
     }
+
+
+
+
 
 
     @Override

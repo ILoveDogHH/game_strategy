@@ -9,21 +9,18 @@ import jedi.game.db.TableType;
 import jedi.game.exception.DaoException;
 import jedi.game.servercfg.base.ServerCfgCacheDaoInterface;
 import jedi.game.servercfg.enity.CfgSkill;
-import org.apache.ibatis.mapping.CacheBuilder;
+import jedi.game.servercfg.enity.CfgSoldier;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
-@DatabaseTableAnnotation(name = "cfg_skill", mapperClass = CfgSkill.class, type = TableType.SERVERCFG, columns = "skill_id")
-public class CfgSkillDao implements ServerCfgCacheDaoInterface {
+@DatabaseTableAnnotation(name = "cfg_soldier", mapperClass = CfgSkill.class, type = TableType.SERVERCFG, columns = "soldier_id")
+public class CfgSoldierDao implements ServerCfgCacheDaoInterface {
 
     /**
      * disable constructor
      */
-    private CfgSkillDao() {
+    private CfgSoldierDao() {
     }
 
-    protected static ICacheDatas<CfgSkill> cacheDatas;
+    protected static ICacheDatas<CfgSoldier> cacheDatas;
 
     private static volatile boolean inited = false;
 
@@ -32,7 +29,7 @@ public class CfgSkillDao implements ServerCfgCacheDaoInterface {
             return;
         }
         // TODO 这里锁的类在新建一个dao时需要修改
-        synchronized (CfgSkillDao.class) {
+        synchronized (CfgSoldierDao.class) {
             if (inited) {
                 return;
             }
@@ -42,14 +39,8 @@ public class CfgSkillDao implements ServerCfgCacheDaoInterface {
     }
 
 
-    public static List<CfgSkill> getSkills() throws DaoException {
-        String sql = "select * from cfg_skill";
-        return cacheDatas.getListCustomFromDao(CacheUtils.toKey(), sql).stream().collect(Collectors.toList());
-    }
-
-
-    public static CfgSkill getSkill(int skillid) throws DaoException {
-        return cacheDatas.getOneFromDao(CacheUtils.toKey(skillid));
+    public static CfgSoldier getOne(int soldier_id) throws DaoException {
+        return cacheDatas.getOne(CacheUtils.toKey(soldier_id));
     }
 
 

@@ -1,10 +1,14 @@
 package jedi.game.player;
 
+import jedi.game.servercfg.enity.CfgHero;
+import jedi.game.servercfg.enity.CfgSoldier;
+
 import java.util.Arrays;
 import java.util.List;
 
 // 玩家类，表示游戏中的玩家角色
 public class Player {
+    public int uid; // 玩家唯一标识符
     // 玩家名称
     public String name;
     // 玩家前排士兵
@@ -13,6 +17,16 @@ public class Player {
     public Soldier backSoldier;
     // 玩家将领
     public Hero general;
+
+
+    public Player(int uid, String uname, CfgHero cfgHero, CfgSoldier frontSoldier, CfgSoldier backSoldier) {
+        this.uid = uid;
+        this.name = uname;
+        this.frontSoldier = new Soldier(uid, frontSoldier);
+        this.backSoldier = new Soldier(uid, backSoldier);
+        this.general = new Hero(uid, cfgHero);
+    }
+
 
     // 构造方法，用于初始化玩家的属性
     public Player(String name, Soldier frontSoldier, Soldier backSoldier, Hero general) {

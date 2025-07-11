@@ -21,6 +21,7 @@ public class cfgGenerator {
                             .addInclude("cfg_skill")
                             .addInclude("cfg_skill_effect")// 替换成你的表
                             .addInclude("cfg_soldier")
+                            .addInclude("cfg_hero")
                             .entityBuilder()
                             .enableLombok()
                             .enableFileOverride()
