@@ -11,7 +11,7 @@ import jedi.game.servercfg.base.ServerCfgCacheDaoInterface;
 import jedi.game.servercfg.enity.CfgSkill;
 import jedi.game.servercfg.enity.CfgSoldier;
 
-@DatabaseTableAnnotation(name = "cfg_soldier", mapperClass = CfgSkill.class, type = TableType.SERVERCFG, columns = "soldier_id")
+@DatabaseTableAnnotation(name = "cfg_soldier", mapperClass = CfgSoldier.class, type = TableType.SERVERCFG, columns = "soldier_id")
 public class CfgSoldierDao implements ServerCfgCacheDaoInterface {
 
     /**

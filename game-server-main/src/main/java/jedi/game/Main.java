@@ -20,10 +20,6 @@ public class Main {
         DBManager.instance.initialize();
 
 
-
-        BattleSystemDemo.runBattle();
-
-
     }
 
 }

@@ -34,7 +34,6 @@ public class BattleTeam {
     public void scheduleEvent(IEvent event) { eventQueue.add(event); }
 
     public List<Action> startbattle() {
-        System.out.println("战斗开始！");
         scheduleEvent(new SoliderEvent(0, EventPriority.ATTACK, playerA.frontSoldier, playerB));
         scheduleEvent(new SoliderEvent(0, EventPriority.ATTACK, playerB.frontSoldier, playerA));
         // 初始化普攻事件

@@ -1,8 +1,11 @@
 package jedi.game.controller;
 
+import jedi.game.action.Action;
 import jedi.game.battle.BattleTeam;
+import jedi.game.databases.DBManager;
 import jedi.game.enums.PositionType;
 import jedi.game.exception.DaoException;
+import jedi.game.logger.JLogger;
 import jedi.game.player.Hero;
 import jedi.game.player.Player;
 import jedi.game.player.Soldier;
@@ -19,7 +22,21 @@ public class BattleSystemDemo {
 
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DaoException, ClassNotFoundException {
+        JLogger.setDebugLoggerLevel("DEBUG");
+
+        DBManager.instance.initialize();
+
+
+        Player a = createPlayer(0, "A玩家", 1);
+
+        Player b = createPlayer(1, "B玩家", 2);
+
+
+        BattleTeam team = new BattleTeam(a, b);
+
+        List<Action> actions = team.startbattle();
+
 
 
     }
